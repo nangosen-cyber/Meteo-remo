@@ -107,7 +107,7 @@ const res = await fetch('https://api.anthropic.com/v1/messages', {
   },
   body: JSON.stringify({
     model: 'claude-sonnet-5',
-    max_tokens: 2000,
+    max_tokens: 4000,
     messages: [{ role: 'user', content: prompt }],
   }),
 });
@@ -118,15 +118,22 @@ if (!res.ok) {
 }
 
 const data = await res.json();
-const textoRespuesta = (data.content && data.content[0] && data.content[0].text) || '';
+console.log('stop_reason:', data.stop_reason, '- bloques de contenido:', (data.content || []).map((b) => b.type).join(', '));
+
+// El modelo puede devolver bloques de "thinking" antes del bloque de texto final:
+// nos quedamos solo con los bloques de tipo "text" concatenados.
+const textoRespuesta = (data.content || [])
+  .filter((b) => b && b.type === 'text' && typeof b.text === 'string')
+  .map((b) => b.text)
+  .join('');
 
 let parte;
 try {
   const jsonMatch = textoRespuesta.match(/\{[\s\S]*\}/);
   parte = JSON.parse(jsonMatch ? jsonMatch[0] : textoRespuesta);
 } catch (e) {
-  console.error('No se pudo interpretar la respuesta de la IA como JSON:');
-  console.error(textoRespuesta);
+  console.error('No se pudo interpretar la respuesta de la IA como JSON. Respuesta completa de la API:');
+  console.error(JSON.stringify(data).slice(0, 4000));
   process.exit(1);
 }
 
