@@ -1,0 +1,45 @@
+name: Parte de la Dársena - previsión diaria
+
+on:
+  schedule:
+    # 04:10 UTC = 06:10 hora de Madrid en horario de verano (CEST).
+    # En invierno (CET, desde finales de octubre) esto se convierte en 05:10 hora local,
+    # es decir se adelanta una hora respecto al horario de verano - sigue con margen
+    # de sobra antes del aviso del club (~06:30), pero si se quiere ajustar, cambiar
+    # el minuto/hora de abajo.
+    - cron: '10 4 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: parte-darsena
+  cancel-in-progress: false
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generar el parte del día
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generar-parte.mjs
+
+      - name: Publicar cambios
+        run: |
+          git config user.name "parte-darsena-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "Sin cambios que publicar."
+          else
+            git commit -m "Parte del día $(date -u +%F)"
+            git push
+          fi

@@ -1,0 +1,303 @@
+<title>Parte de la Dársena</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --paper:#EEF1EF;
+    --paper-raised:#FFFFFF;
+    --ink:#16232B;
+    --ink-soft:rgba(22,35,43,.62);
+    --ink-faint:rgba(22,35,43,.38);
+    --line:rgba(22,35,43,.14);
+    --sea:#1F6F78;
+    --sea-soft:rgba(31,111,120,.10);
+    --amber:#A8721E;
+    --coral:#B14B3A;
+    --coral-soft:rgba(177,75,58,.10);
+    --green:#3C7A54;
+    --green-soft:rgba(60,122,84,.12);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0F1A1F;
+      --paper-raised:#152229;
+      --ink:#E7ECE9;
+      --ink-soft:rgba(231,236,233,.66);
+      --ink-faint:rgba(231,236,233,.40);
+      --line:rgba(231,236,233,.16);
+      --sea:#5FC2CB;
+      --sea-soft:rgba(95,194,203,.12);
+      --amber:#D9A24B;
+      --coral:#E17762;
+      --coral-soft:rgba(225,119,98,.14);
+      --green:#6FBE87;
+      --green-soft:rgba(111,190,135,.14);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0F1A1F;
+    --paper-raised:#152229;
+    --ink:#E7ECE9;
+    --ink-soft:rgba(231,236,233,.66);
+    --ink-faint:rgba(231,236,233,.40);
+    --line:rgba(231,236,233,.16);
+    --sea:#5FC2CB;
+    --sea-soft:rgba(95,194,203,.12);
+    --amber:#D9A24B;
+    --coral:#E17762;
+    --coral-soft:rgba(225,119,98,.14);
+    --green:#6FBE87;
+    --green-soft:rgba(111,190,135,.14);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4',Georgia,serif;
+    margin:0;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:28px 20px 64px;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--sea);
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:12px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:10px;
+  }
+  .eyebrow span:last-child{color:var(--ink-faint);}
+
+  h1{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:800;
+    font-size:clamp(34px,9vw,46px);
+    line-height:.92;
+    letter-spacing:.01em;
+    margin:16px 0 4px;
+    text-wrap:balance;
+  }
+  .fecha{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:14px;
+    color:var(--ink-soft);
+    margin:0 0 22px;
+  }
+
+  .status-card{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:20px 22px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:22px;
+  }
+  .status-flag{
+    width:6px;align-self:stretch;border-radius:3px;background:var(--green);flex:none;
+  }
+  .status-word{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:800;
+    font-size:30px;
+    letter-spacing:.03em;
+    color:var(--green);
+    line-height:1;
+  }
+  .status-sub{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-top:6px;
+    line-height:1.5;
+  }
+  .badge{
+    margin-left:auto;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.04em;
+    background:var(--green-soft);
+    color:var(--green);
+    border-radius:100px;
+    padding:5px 11px;
+    white-space:nowrap;
+  }
+
+  .card{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:22px 22px 18px;
+    margin-bottom:20px;
+  }
+  .card h2{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin:0 0 14px;
+    font-weight:600;
+  }
+  .bulletin{
+    font-size:16.5px;
+    line-height:1.62;
+    white-space:pre-wrap;
+    margin:0 0 16px;
+  }
+  .copy-btn{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:.03em;
+    background:var(--sea-soft);
+    color:var(--sea);
+    border:none;
+    border-radius:3px;
+    padding:9px 14px;
+    cursor:pointer;
+  }
+  .copy-btn:active{opacity:.7;}
+
+  dl.datos{
+    margin:0;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    line-height:1.6;
+  }
+  dl.datos div{display:flex;gap:14px;padding:7px 0;border-top:1px solid var(--line);}
+  dl.datos div:first-child{border-top:none;}
+  dl.datos dt{color:var(--ink-faint);flex:0 0 128px;}
+  dl.datos dd{margin:0;color:var(--ink-soft);}
+
+  table.hist{width:100%;border-collapse:collapse;font-family:'IBM Plex Mono',monospace;font-size:12px;}
+  table.hist th{
+    text-align:left;font-weight:600;color:var(--ink-faint);
+    text-transform:uppercase;letter-spacing:.04em;font-size:10.5px;
+    padding:0 8px 8px 0;border-bottom:1px solid var(--line);
+  }
+  table.hist td{padding:9px 8px 9px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-soft);}
+  table.hist tr:last-child td{border-bottom:none;}
+  .ok{color:var(--green);font-weight:600;}
+  .tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+
+  .explica p{font-size:15px;line-height:1.65;color:var(--ink-soft);margin:0 0 12px;}
+  .explica p:last-child{margin-bottom:0;}
+  .explica strong{color:var(--ink);}
+
+  .foot{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--ink-faint);
+    text-align:center;
+    padding-top:18px;
+    line-height:1.7;
+  }
+  .foot a{color:var(--sea);}
+</style>
+
+<div class="wrap">
+
+  <div class="eyebrow">
+    <span>Escuela de Remo FRCV · Marina Real Juan Carlos I</span>
+    <span>Dársena interior</span>
+  </div>
+
+  <h1>PARTE DE<br>LA DÁRSENA</h1>
+  <p class="fecha">Lunes, 14 de septiembre de 2026</p>
+
+  <div class="status-card">
+    <div class="status-flag"></div>
+    <div>
+      <div class="status-word">AGUA</div>
+      <div class="status-sub">Poniente flojo a primera hora → Garbí moderado desde mediodía</div>
+    </div>
+    <div class="badge">✓ acierto</div>
+  </div>
+
+  <div class="card">
+    <h2>Boletín (formato WhatsApp)</h2>
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL lunes 14 de septiembre
+
+Buenas días!
+
+Poniente flojo a primera hora; Garbí moderado a partir de mediodía, y que bajará de intensidad a última hora de la tarde.
+
+Entrenamiento en el agua.
+
+No os olvideis traer algún tipo de protección solar y agua a los entrenamientos.
+
+Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodbuster)</p>
+    <button class="copy-btn" onclick="copyBulletin(this)">Copiar texto</button>
+  </div>
+
+  <div class="card">
+    <h2>Datos usados (para comparar)</h2>
+    <dl class="datos">
+      <div><dt>Viento AM</dt><dd>Ponent (W/WNW), flojo — &lt;5 kt</dd></div>
+      <div><dt>Viento PM</dt><dd>Garbí (ESE/SE) desde mediodía, moderado 10–13 kt; cae ≥40% entre 17h–20h</dd></div>
+      <div><dt>Estado del mar</dt><dd>Sin oleaje reseñable</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>Ninguna activa (litoral norte, cód. 774602)</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas, Windfinder Marina Valencia, AEMET</dd></div>
+      <div><dt>Sin acceso</dt><dd>Windguru La Patacona (requiere JS)</dd></div>
+    </dl>
+  </div>
+
+  <div class="card">
+    <h2>Historial de validación — julio 2026</h2>
+    <div class="tablewrap">
+    <table class="hist">
+      <tr><th>Fecha</th><th>Aviso club real</th><th>IA</th><th></th></tr>
+      <tr><td>07/07</td><td>Suspensión 11–19h (calor)</td><td>Suspensión</td><td class="ok">✓</td></tr>
+      <tr><td>08/07</td><td>Suspensión 11–19h (calor)</td><td>Suspensión</td><td class="ok">✓</td></tr>
+      <tr><td>23/07</td><td>Suspensión desde las 12h</td><td>Suspensión</td><td class="ok">✓</td></tr>
+      <tr><td>24/07</td><td>Agua — Tramuntana + Llevant</td><td>Agua</td><td class="ok">✓</td></tr>
+      <tr><td>27/07</td><td>Agua — Ponent + Garbí mod./fuerte</td><td>Agua</td><td class="ok">✓</td></tr>
+      <tr><td>28/07</td><td>Agua — Tramuntana + Garbí mod./fuerte</td><td>Agua</td><td class="ok">✓</td></tr>
+      <tr><td>29/07</td><td>Agua — Mistral + Garbí moderado</td><td>Agua</td><td class="ok">✓</td></tr>
+      <tr><td>14/09</td><td>Agua — Ponent flojo + Garbí moderado</td><td>Agua</td><td class="ok">✓</td></tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="card explica">
+    <h2>Qué es esto</h2>
+    <p><strong>Un experimento de Nando</strong>, sin relación oficial con el club: una IA lee las mismas fuentes de viento y mar que usa la escuela, traduce la dirección a los nombres que usa el club (Tramuntana, Gregal, Llevant, Garbí, Migjorn, Llebeig, Ponent, Mistral) y redacta el parte del día en el mismo tono que el aviso de WhatsApp.</p>
+    <p>Cada mañana de julio se comparó a mano contra el aviso real del club, con <strong>8 de 8 aciertos</strong> en la decisión de entrenamiento (agua / suspensión).</p>
+    <p><strong>Ahora mismo esta página se actualiza a mano.</strong> El siguiente paso es que se regenere ella sola cada mañana antes del aviso del club, para que la escuela solo tenga que abrir este mismo enlace desde el móvil.</p>
+  </div>
+
+  <div class="foot">
+    Contacto del experimento: <a href="mailto:nangosen@gmail.com">nangosen@gmail.com</a><br>
+    No sustituye al aviso oficial de la escuela ni a las alertas de AEMET.
+  </div>
+
+</div>
+
+<script>
+function copyBulletin(btn){
+  var text = document.getElementById('bulletinText').innerText;
+  var original = btn.textContent;
+  function done(ok){
+    btn.textContent = ok ? 'Copiado ✓' : 'No se pudo copiar';
+    setTimeout(function(){ btn.textContent = original; }, 1600);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){done(true);}, function(){done(false);});
+  } else {
+    try{
+      var ta=document.createElement('textarea');
+      ta.value=text; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta);
+      done(true);
+    }catch(e){ done(false); }
+  }
+}
+</script>
