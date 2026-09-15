@@ -5,10 +5,10 @@
   :root{
     --paper:#EEF1EF;
     --paper-raised:#FFFFFF;
-    --ink:#16232B;
-    --ink-soft:rgba(22,35,43,.62);
-    --ink-faint:rgba(22,35,43,.38);
-    --line:rgba(22,35,43,.14);
+    --ink:#000000;
+    --ink-soft:rgba(0,0,0,.68);
+    --ink-faint:rgba(0,0,0,.42);
+    --line:rgba(0,0,0,.14);
     --sea:#1F6F78;
     --sea-soft:rgba(31,111,120,.10);
     --amber:#A8721E;
@@ -84,11 +84,28 @@
     margin:16px 0 4px;
     text-wrap:balance;
   }
+  .fecha-wrap{
+    display:inline-flex;
+    align-items:baseline;
+    gap:9px;
+    background:var(--sea-soft);
+    border-radius:8px;
+    padding:9px 16px;
+    margin:0 0 22px;
+  }
+  .fecha-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--sea);
+  }
   .fecha{
     font-family:'IBM Plex Mono',monospace;
-    font-size:14px;
-    color:var(--ink-soft);
-    margin:0 0 22px;
+    font-size:19px;
+    font-weight:700;
+    color:var(--ink);
+    margin:0;
   }
 
   .status-card{
@@ -211,7 +228,10 @@
   </div>
 
   <h1>PARTE DE<br>LA DÁRSENA</h1>
-  <p class="fecha">Lunes, 14 de septiembre de 2026</p>
+  <div class="fecha-wrap">
+    <span class="fecha-label">Datos de</span>
+    <p class="fecha">Lunes, 14 de septiembre de 2026</p>
+  </div>
 
   <div class="status-card">
     <div class="status-flag" style="background:var(--green)"></div>
@@ -271,7 +291,7 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
     <h2>Qué es esto</h2>
     <p><strong>Un experimento de Nando</strong>, sin relación oficial con el club: una IA lee las mismas fuentes de viento y mar que usa la escuela, traduce la dirección a los nombres que usa el club (Tramuntana, Gregal, Llevant, Garbí, Migjorn, Llebeig, Ponent, Mistral) y redacta el parte del día en el mismo tono que el aviso de WhatsApp.</p>
     <p>Cada mañana de julio se comparó a mano contra el aviso real del club, con <strong>8 de 8 aciertos</strong> en la decisión de entrenamiento (agua / suspensión).</p>
-    <p><strong>Ahora mismo esta página se actualiza a mano.</strong> El siguiente paso es que se regenere ella sola cada mañana antes del aviso del club, para que la escuela solo tenga que abrir este mismo enlace desde el móvil.</p>
+    <p><strong>Esta página se regenera ella sola cada mañana a las 06:10h</strong>, antes del aviso del club — solo hay que abrir este mismo enlace desde el móvil. El aviso "Datos de" de arriba siempre indica el día al que corresponde la previsión, para comprobar que es la de hoy.</p>
   </div>
 
   <div class="foot">

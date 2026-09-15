@@ -8,6 +8,12 @@ on:
     # de sobra antes del aviso del club (~06:30), pero si se quiere ajustar, cambiar
     # el minuto/hora de abajo.
     - cron: '10 4 * * *'
+    # Segundo disparo de seguridad 15 minutos después: el "schedule" de GitHub Actions
+    # a veces simplemente no se dispara (limitación conocida, sobre todo en workflows
+    # nuevos). El script es idempotente (siempre regenera desde cero), así que si el
+    # primero sí se ejecutó, este segundo no hace daño - solo refresca con datos algo
+    # más recientes.
+    - cron: '25 4 * * *'
   workflow_dispatch: {}
 
 permissions:
