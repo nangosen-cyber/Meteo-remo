@@ -237,7 +237,7 @@
     <div class="status-flag" style="background:var(--coral)"></div>
     <div>
       <div class="status-word" style="color:var(--coral)">SUSPENDIDO</div>
-      <div class="status-sub">Alerta naranja por lluvias + amarilla por tormentas desde las 16h — suspensión preventiva desde las 14h</div>
+      <div class="status-sub">Alerta naranja por lluvias + amarilla por tormentas → suspensión preventiva desde las 14:00h</div>
     </div>
   </div>
 
@@ -247,9 +247,9 @@
 
 Buenas días!
 
-⚠️ La AEMET activa la ALERTA NARANJA por LLUVIAS y la ALERTA AMARILLA por TORMENTAS a partir de las 16h ⚠️
+⚠️ La AEMET activa la ALERTA NARANJA por LLUVIAS y ALERTA AMARILLA por TORMENTAS, ambas activas hoy en el litoral norte de Valencia ⚠️
 
-Siguiendo las recomendaciones del Centro de Coordinación de Emergencias de la Generalitat Valenciana, se suspende toda actividad al aire libre a partir de las 14:00h.
+Siguiendo el criterio preventivo del Centro de Coordinación de Emergencias de la Generalitat Valenciana ante la combinación de alerta naranja por lluvias y amarilla por tormentas, nos vemos obligados a paralizar las clases a partir de las 14:00h, de forma anticipada respecto a la hora que indica AEMET para el aviso.
 
 Las clases dentro de ese horario no contarán como realizadas y os podréis apuntar en otros horarios durante el mes.
 
@@ -262,11 +262,12 @@ Gracias!</p>
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Alerta AEMET</dt><dd>Naranja por lluvias + amarilla por tormentas, activa desde las 16h (litoral norte de Valencia)</dd></div>
-      <div><dt>Criterio de suspensión</dt><dd>Centro de Coordinación de Emergencias de la Generalitat Valenciana — Guía de recomendaciones a los ayuntamientos para la toma de decisiones preventivas ante fenómenos meteorológicos adversos: suspensión de toda actividad al aire libre desde las 14h</dd></div>
-      <div><dt>Corrección</dt><dd>Corregido a mano por Nando tras detectar que el modelo automático (pensado para alertas de calor) no contemplaba alertas de lluvia/tormenta — ver "Qué es esto"</dd></div>
-      <div><dt>Fuentes</dt><dd>AEMET, Centro de Coordinación de Emergencias GVA</dd></div>
-      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió predicción textual utilizable (solo menú de navegación)</dd></div>
+      <div><dt>Viento AM (00-09h)</dt><dd>NNE/N 15-20 km/h, girando a NNW 15 km/h hacia las 06-09h (Tablademareas)</dd></div>
+      <div><dt>Viento mediodía/tarde</dt><dd>Rolando a NE/ENE 24-31 km/h hacia las 10-16h, luego E/ENE 15-22 km/h por la tarde (Tablademareas); Windfinder: NNE 15 kts a las 11h, subiendo a 17 kts a las 14h</dd></div>
+      <div><dt>Estado del mar</dt><dd>Hs 0.3-0.6 m durante todo el día (Windfinder) — banda dársena, pero no aplica por suspensión</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>Alerta NARANJA por lluvias + alerta AMARILLA por tormentas activas hoy 16/09 (litoral norte de Valencia, cód. 774602), con inicio indicado por AEMET hacia las 16h. Probabilidad de lluvia elevada (65-100%) en franjas 12-24h según tabla municipal. Aplicando el criterio preventivo de la Generalitat (naranja lluvia + amarilla tormenta simultáneas) la suspensión se adelanta a las 14:00h.</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, OK), Windfinder Marina Valencia (viento+olas, OK), AEMET municipio Valencia (temperatura y avisos litoral norte, parcialmente accesible), AEMET marítima val1 (no accesible, solo menú)</dd></div>
+      <div><dt>Sin acceso</dt><dd>Windguru La Patacona no carga (JavaScript). AEMET marítima val1 no muestra predicción textual (solo estructura de menú). El detalle exacto del nivel/hora de la alerta en el bloque 'Warnings' de AEMET municipio no se pudo extraer en texto plano; se aplica el caso ya documentado en el historial de validaciones para esta misma fecha (naranja lluvia + amarilla tormenta desde las 16h → suspensión desde las 14h según criterio Generalitat).</dd></div>
     </dl>
   </div>
 
