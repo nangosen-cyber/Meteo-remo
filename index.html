@@ -234,37 +234,38 @@
   </div>
 
   <div class="status-card">
-    <div class="status-flag" style="background:var(--green)"></div>
+    <div class="status-flag" style="background:var(--coral)"></div>
     <div>
-      <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Tramuntana flojo a primera hora → Gregal fuerte desde mitad mañana</div>
+      <div class="status-word" style="color:var(--coral)">SUSPENDIDO</div>
+      <div class="status-sub">Alerta naranja por lluvias + amarilla por tormentas desde las 16h — suspensión preventiva desde las 14h</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEREOLÓGICA DEL miércoles 16 de septiembre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL miércoles 16 de septiembre
 
 Buenas días!
 
-Tramuntana flojo a primera hora; Gregal fuerte a partir de mitad mañana, hasta el final de la jornada.
+⚠️ La AEMET activa la ALERTA NARANJA por LLUVIAS y la ALERTA AMARILLA por TORMENTAS a partir de las 16h ⚠️
 
-Entrenamiento en el agua.
+Siguiendo las recomendaciones del Centro de Coordinación de Emergencias de la Generalitat Valenciana, se suspende toda actividad al aire libre a partir de las 14:00h.
 
-No os olvideis traer algún tipo de protección solar y agua a los entrenamientos.
+Las clases dentro de ese horario no contarán como realizadas y os podréis apuntar en otros horarios durante el mes.
 
-Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodbuster)</p>
+Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodbuster)
+
+Gracias!</p>
     <button class="copy-btn" onclick="copyBulletin(this)">Copiar texto</button>
   </div>
 
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM (00-09h)</dt><dd>N/NNE predominante (algo de NNW puntual), 15-20 km/h ≈ 8-11 kts (Tablademareas); Windfinder 6-7 kts NNE — Tramuntana flojo</dd></div>
-      <div><dt>Viento mediodía-tarde (10-20h)</dt><dd>Gira a NE (25-31 km/h ≈ 13-17 kts, 10h-15h) y luego ENE/E/ESE (15-22 km/h ≈ 8-12 kts, 16-20h); Windfinder confirma 15-17 kts a mediodía, 13-14 kts hacia 17-20h (sin caída ≥40%) — Gregal fuerte</dd></div>
-      <div><dt>Estado del mar (Hs)</dt><dd>Windfinder: 0.3-0.6 m a lo largo del día (mayoría ≤0.5 m), sin superar el umbral de dársena de forma sostenida</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>Sin alertas activas en litoral norte de Valencia; temperatura máxima prevista 29°C (muy por debajo de umbrales de calor)</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora) y Windfinder Marina Valencia (viento + Hs) como principales; AEMET municipio Valencia para temperatura y alertas</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>Naranja por lluvias + amarilla por tormentas, activa desde las 16h (litoral norte de Valencia)</dd></div>
+      <div><dt>Criterio de suspensión</dt><dd>Centro de Coordinación de Emergencias de la Generalitat Valenciana — Guía de recomendaciones a los ayuntamientos para la toma de decisiones preventivas ante fenómenos meteorológicos adversos: suspensión de toda actividad al aire libre desde las 14h</dd></div>
+      <div><dt>Corrección</dt><dd>Corregido a mano por Nando tras detectar que el modelo automático (pensado para alertas de calor) no contemplaba alertas de lluvia/tormenta — ver "Qué es esto"</dd></div>
+      <div><dt>Fuentes</dt><dd>AEMET, Centro de Coordinación de Emergencias GVA</dd></div>
       <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió predicción textual utilizable (solo menú de navegación)</dd></div>
     </dl>
   </div>
