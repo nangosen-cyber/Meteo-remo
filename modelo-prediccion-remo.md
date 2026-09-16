@@ -96,6 +96,8 @@ El club usa nombres mediterráneos locales, nunca grados ni "componente X".
 
 **Regla general (para combinaciones no vistas todavía)**: en la página de AEMET (municipio Valencia y marítima val1) buscar SIEMPRE, no solo temperatura, cualquier aviso activo de: lluvia, tormenta, viento, nieve, costero, o cualquier otro fenómeno, y su nivel (amarillo/naranja/rojo). Si aparece cualquier alerta naranja o roja de cualquier tipo (no solo calor o marítima), tratarla como posible causa de suspensión: mencionarla siempre en el bloque "Datos usados" aunque no se esté seguro de si aplica suspensión, y aplicar el criterio más conservador (suspender) si hay dos o más alertas simultáneas de nivel naranja/amarillo de fenómenos distintos, tal como pasó el 16/09. Ante la duda, es preferible que Nando revise y corrija a que el sistema calle una alerta real.
 
+**Importante — cuándo es suspensión TOTAL y cuándo es PARCIAL:** si la alerta/suspensión empieza a una hora concreta del día (ej. "desde las 14h") y la franja anterior no tiene ningún problema, la decisión es `PARCIAL`, no `SUSPENDIDO`: el boletín debe dar primero la información normal de la mañana (viento, entrenamiento en el agua) y añadir la alerta como excepción para la tarde — ver la plantilla "Día con alerta que solo afecta a PARTE de la jornada" en la sección 7. `SUSPENDIDO` (todo el boletín es el aviso de cancelación, sin datos de viento) se reserva para cuando la suspensión aplica desde primera hora de la mañana o todo el día.
+
 ### c) Alerta marítima (litoral norte, código 774602)
 - Naranja → suspensión. Rojo → suspensión total. Amarillo → sin suspensión, precaución.
 
@@ -152,6 +154,29 @@ Las clases dentro de ese horario no contarán como realizadas y os podréis apun
 Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodbuster)
 
 Gracias!
+```
+
+### Día con alerta que solo afecta a PARTE de la jornada (ej. una alerta que empieza a las 14h/16h y la mañana es normal)
+⚠️ **Añadido el 16/09/2026**: si la suspensión no cubre todo el día (por ejemplo, una alerta de lluvia/tormenta desde las 14h pero la mañana no tiene ningún problema), **NO** se sustituye todo el boletín por el aviso de suspensión. Se empieza igual que un día normal (con la información de viento/mar de la mañana, para que las clases que sí hay puedan hacerse con normalidad) y **se añade la alerta como excepción**, dejando claro a partir de qué hora se anula la actividad. En este caso `decision` es `"PARCIAL"` y `color_token` es `"coral"` (llama la atención sin decir que todo el día está cancelado).
+
+```
+PREVISIÓN METEOROLÓGICA DEL [día] [fecha]
+
+Buenas días!
+
+[Nombre viento local] [intensidad] a primera hora; [segundo viento] [intensidad] a partir de [expresión temporal].
+
+Entrenamiento en el agua durante la mañana.
+
+⚠️ La AEMET activa la ALERTA [NIVEL] por [FENÓMENO, ej. LLUVIAS] y la ALERTA [NIVEL] por [FENÓMENO, ej. TORMENTAS] a partir de las [hora AEMET] ⚠️
+
+Siguiendo las recomendaciones del Centro de Coordinación de Emergencias de la Generalitat Valenciana, se suspende toda actividad al aire libre a partir de las [hora de suspensión].
+
+Las clases de la tarde dentro de ese horario no contarán como realizadas y os podréis apuntar en otros horarios durante el mes.
+
+No os olvideis traer algún tipo de protección solar y agua a los entrenamientos de la mañana.
+
+Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodbuster)
 ```
 
 ### Reglas de estilo

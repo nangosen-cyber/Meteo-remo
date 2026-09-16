@@ -79,7 +79,11 @@ Aquí tienes el texto extraído HOY de las fuentes de datos (algunas pueden habe
 
 ${bloqueFuentes}
 
-IMPORTANTE: revisa las páginas de AEMET buscando CUALQUIER tipo de alerta activa (calor, lluvia, tormenta, viento, costera, nieve...), no solo temperatura — el 16/09/2026 el sistema falló precisamente por mirar solo alertas de calor y no detectar una alerta naranja de lluvia + amarilla de tormenta. Aplica la lógica de decisión del modelo en este orden: alerta de calor > alerta de lluvia/tormenta/otro fenómeno (sección 6b del modelo) > alerta marítima > alerta de viento > criterio fino agua/dársena/tierra. Ante cualquier alerta naranja o roja de cualquier tipo que no sepas encajar en las reglas exactas, menciónala igualmente en "datos_usados" y aplica el criterio más conservador (tendiendo a SUSPENDIDO) antes que ignorarla. Redacta el boletín exactamente en el formato del modelo. Usa siempre los nombres locales de viento del club (Tramuntana, Gregal, Llevant, Garbí, Migjorn, Llebeig, Ponent, Mistral), nunca grados.
+IMPORTANTE: revisa las páginas de AEMET buscando CUALQUIER tipo de alerta activa (calor, lluvia, tormenta, viento, costera, nieve...), no solo temperatura — el 16/09/2026 el sistema falló precisamente por mirar solo alertas de calor y no detectar una alerta naranja de lluvia + amarilla de tormenta. Aplica la lógica de decisión del modelo en este orden: alerta de calor > alerta de lluvia/tormenta/otro fenómeno (sección 6b del modelo) > alerta marítima > alerta de viento > criterio fino agua/dársena/tierra. Ante cualquier alerta naranja o roja de cualquier tipo que no sepas encajar en las reglas exactas, menciónala igualmente en "datos_usados" y aplica el criterio más conservador (tendiendo a SUSPENDIDO o PARCIAL) antes que ignorarla.
+
+MUY IMPORTANTE — SUSPENDIDO vs PARCIAL (añadido el 16/09/2026, corrección de un fallo real): si la suspensión/alerta empieza a una hora concreta (ej. "desde las 14h") y la franja anterior del día no tiene ningún problema, usa "PARCIAL", NUNCA "SUSPENDIDO". Con "PARCIAL" el boletín empieza igual que un día normal (datos de viento/mar de la mañana, "Entrenamiento en el agua durante la mañana") y AÑADE la alerta como excepción para la tarde, usando la plantilla "Día con alerta que solo afecta a PARTE de la jornada" del modelo (sección 7). Reserva "SUSPENDIDO" (todo el boletín es el aviso de cancelación, sin datos de viento) solo para cuando la suspensión aplica desde primera hora o todo el día entero.
+
+Redacta el boletín exactamente en el formato del modelo. Usa siempre los nombres locales de viento del club (Tramuntana, Gregal, Llevant, Garbí, Migjorn, Llebeig, Ponent, Mistral), nunca grados.
 
 Devuelve EXCLUSIVAMENTE un JSON válido (sin markdown, sin texto antes o después) con esta forma exacta:
 {
@@ -96,7 +100,7 @@ Devuelve EXCLUSIVAMENTE un JSON válido (sin markdown, sin texto antes o despué
     {"etiqueta": "Fuentes", "valor": "..."}
   ]
 }
-"decision" debe ser exactamente uno de: AGUA, DARSENA, TIERRA, SUSPENDIDO. "color_token" debe ser exactamente uno de: green (para AGUA), amber (para DARSENA), coral (para TIERRA o SUSPENDIDO). Añade una fila {"etiqueta":"Sin acceso","valor":"..."} en datos_usados solo si alguna fuente falló.`;
+"decision" debe ser exactamente uno de: AGUA, DARSENA, TIERRA, SUSPENDIDO, PARCIAL. "color_token" debe ser exactamente uno de: green (para AGUA), amber (para DARSENA), coral (para TIERRA, SUSPENDIDO o PARCIAL). Añade una fila {"etiqueta":"Sin acceso","valor":"..."} en datos_usados solo si alguna fuente falló.`;
 
 async function llamarClaude() {
   const res = await fetch('https://api.anthropic.com/v1/messages', {
