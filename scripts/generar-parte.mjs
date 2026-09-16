@@ -39,7 +39,7 @@ async function fetchTexto(url) {
       .replace(/&nbsp;/g, ' ')
       .replace(/\s+/g, ' ')
       .trim()
-      .slice(0, 6000);
+      .slice(0, 20000);
     return { ok: true, texto };
   } catch (e) {
     return { ok: false, error: String(e && e.message || e) };
@@ -79,7 +79,7 @@ Aquí tienes el texto extraído HOY de las fuentes de datos (algunas pueden habe
 
 ${bloqueFuentes}
 
-Aplica la lógica de decisión del modelo (alerta de calor > alerta marítima > alerta de viento > criterio fino agua/dársena/tierra) y redacta el boletín exactamente en el formato del modelo. Usa siempre los nombres locales de viento del club (Tramuntana, Gregal, Llevant, Garbí, Migjorn, Llebeig, Ponent, Mistral), nunca grados.
+IMPORTANTE: revisa las páginas de AEMET buscando CUALQUIER tipo de alerta activa (calor, lluvia, tormenta, viento, costera, nieve...), no solo temperatura — el 16/09/2026 el sistema falló precisamente por mirar solo alertas de calor y no detectar una alerta naranja de lluvia + amarilla de tormenta. Aplica la lógica de decisión del modelo en este orden: alerta de calor > alerta de lluvia/tormenta/otro fenómeno (sección 6b del modelo) > alerta marítima > alerta de viento > criterio fino agua/dársena/tierra. Ante cualquier alerta naranja o roja de cualquier tipo que no sepas encajar en las reglas exactas, menciónala igualmente en "datos_usados" y aplica el criterio más conservador (tendiendo a SUSPENDIDO) antes que ignorarla. Redacta el boletín exactamente en el formato del modelo. Usa siempre los nombres locales de viento del club (Tramuntana, Gregal, Llevant, Garbí, Migjorn, Llebeig, Ponent, Mistral), nunca grados.
 
 Devuelve EXCLUSIVAMENTE un JSON válido (sin markdown, sin texto antes o después) con esta forma exacta:
 {

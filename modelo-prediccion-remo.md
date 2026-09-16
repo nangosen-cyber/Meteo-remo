@@ -88,14 +88,22 @@ El club usa nombres mediterráneos locales, nunca grados ni "componente X".
   - Hora fin: 19:00 salvo que AEMET indique otro.
 - **Rojo** ≥42°C → **SE SUSPENDE** toda actividad física.
 
-### b) Alerta marítima (litoral norte, código 774602)
+### b) Alerta por LLUVIA / TORMENTA / CUALQUIER OTRO FENÓMENO ADVERSO (no solo calor)
+⚠️ **Añadido el 16/09/2026 tras un fallo real**: el modelo original solo miraba alertas de calor porque toda la validación de julio fue en pleno verano. El 16/09/2026 hubo alerta naranja por lluvias + amarilla por tormentas desde las 16h y el sistema no la detectó ni la mencionó — falló silenciosamente.
+
+**Regla explícita conocida** (criterio del Centro de Coordinación de Emergencias de la Generalitat Valenciana, Guía de recomendaciones a los ayuntamientos para la toma de decisiones preventivas ante fenómenos meteorológicos adversos):
+- Alerta **naranja por lluvias** + alerta **amarilla por tormentas** activas el mismo día → **SE SUSPENDE toda actividad al aire libre desde las 14:00h**, aunque la alerta de AEMET indique una hora de inicio posterior (ej. 16h) — la suspensión de la Generalitat es preventiva y empieza antes.
+
+**Regla general (para combinaciones no vistas todavía)**: en la página de AEMET (municipio Valencia y marítima val1) buscar SIEMPRE, no solo temperatura, cualquier aviso activo de: lluvia, tormenta, viento, nieve, costero, o cualquier otro fenómeno, y su nivel (amarillo/naranja/rojo). Si aparece cualquier alerta naranja o roja de cualquier tipo (no solo calor o marítima), tratarla como posible causa de suspensión: mencionarla siempre en el bloque "Datos usados" aunque no se esté seguro de si aplica suspensión, y aplicar el criterio más conservador (suspender) si hay dos o más alertas simultáneas de nivel naranja/amarillo de fenómenos distintos, tal como pasó el 16/09. Ante la duda, es preferible que Nando revise y corrija a que el sistema calle una alerta real.
+
+### c) Alerta marítima (litoral norte, código 774602)
 - Naranja → suspensión. Rojo → suspensión total. Amarillo → sin suspensión, precaución.
 
-### c) Alerta de viento
+### d) Alerta de viento
 - Racha ≥90 km/h (naranja) → suspensión al aire libre.
 - Racha ≥130 km/h (rojo) → suspensión total.
 
-### d) Criterio fino agua / dársena / tierra (si no hay alertas)
+### e) Criterio fino agua / dársena / tierra (si no hay alertas)
 
 **Viento:**
 - Suave: <10 kts
@@ -178,6 +186,7 @@ Gracias!
 | 28/07/2026 | Sin alerta relevante | Agua — Tramuntana suave + Garbí moderado a fuerte (desde mitad mañana, hasta final jornada) | Agua | ✅ | Timing "mitad mañana" ~10-11h; N/NNE = Tramuntana |
 | 29/07/2026 | Sin alerta relevante | Agua — Mistral suave + Garbí moderado (desde mitad mañana, hasta final jornada) | Agua | ✅ | NNW dominante = Mistral; 11-12 kts Garbí = "moderado" (no "moderado a fuerte") |
 | 14/09/2026 | Sin alerta | Agua — Poniente flojo + Garbí moderado (desde mediodía, baja intensidad última tarde) | Agua | ✅ | "Flojo" para <5 kts (vs "suave"); el club matiza bajada de intensidad al final si Windfinder la muestra (≥40% de caída 17h-20h) |
+| 16/09/2026 | Naranja lluvia + amarilla tormenta (desde 16h) | Suspensión desde las 14h (criterio Generalitat) | Agua (❌ no detectó la alerta) | ❌ | Corregido a mano por Nando. El sistema solo miraba alertas de calor/marítima/viento — nunca lluvia/tormenta. Ver sección 6b. |
 
 ---
 
@@ -193,6 +202,8 @@ Gracias!
 8. **Timing "mitad mañana":** entrada del viento secundario a las ~10-11h.
 9. **Windguru no carga con web_fetch** (JavaScript). Usar tablademareas + Windfinder como sustitutos habituales.
 10. **AEMET litoral norte Valencia = código 774602.** Verificar siempre en aemet.es/en/eltiempo/prediccion/municipios/valencia-id46250 (campo "Warnings. Litoral norte de Valencia").
+11. **No solo alertas de calor.** El 16/09/2026 hubo alerta naranja de lluvia + amarilla de tormenta que el sistema no vio porque solo comprobaba temperatura. Revisar SIEMPRE cualquier tipo de alerta activa en AEMET (lluvia, tormenta, viento, costera, nieve...), no solo calor. Ver regla 6b.
+12. **Criterio de la Generalitat puede ser más estricto y más preventivo que el de AEMET.** Una combinación de alertas (ej. naranja lluvia + amarilla tormenta) puede implicar suspensión desde una hora *anterior* a la que indica el propio aviso de AEMET, según la Guía de recomendaciones a los ayuntamientos del Centro de Coordinación de Emergencias de la Generalitat Valenciana.
 
 ---
 
