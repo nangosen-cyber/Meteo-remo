@@ -98,43 +98,55 @@ Devuelve EXCLUSIVAMENTE un JSON válido (sin markdown, sin texto antes o despué
 }
 "decision" debe ser exactamente uno de: AGUA, DARSENA, TIERRA, SUSPENDIDO. "color_token" debe ser exactamente uno de: green (para AGUA), amber (para DARSENA), coral (para TIERRA o SUSPENDIDO). Añade una fila {"etiqueta":"Sin acceso","valor":"..."} en datos_usados solo si alguna fuente falló.`;
 
-const res = await fetch('https://api.anthropic.com/v1/messages', {
-  method: 'POST',
-  headers: {
-    'content-type': 'application/json',
-    'x-api-key': ANTHROPIC_API_KEY,
-    'anthropic-version': '2023-06-01',
-  },
-  body: JSON.stringify({
-    model: 'claude-sonnet-5',
-    max_tokens: 8000,
-    messages: [{ role: 'user', content: prompt }],
-  }),
-});
+async function llamarClaude() {
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      'x-api-key': ANTHROPIC_API_KEY,
+      'anthropic-version': '2023-06-01',
+    },
+    body: JSON.stringify({
+      model: 'claude-sonnet-5',
+      max_tokens: 16000,
+      messages: [{ role: 'user', content: prompt }],
+    }),
+  });
 
-if (!res.ok) {
-  console.error('Error de la API de Anthropic:', res.status, await res.text());
-  process.exit(1);
+  if (!res.ok) {
+    throw new Error(`Error de la API de Anthropic: ${res.status} ${await res.text()}`);
+  }
+
+  const data = await res.json();
+  console.log('stop_reason:', data.stop_reason, '- bloques de contenido:', (data.content || []).map((b) => b.type).join(', '));
+
+  // El modelo puede devolver bloques de "thinking" antes del bloque de texto final:
+  // nos quedamos solo con los bloques de tipo "text" concatenados.
+  const textoRespuesta = (data.content || [])
+    .filter((b) => b && b.type === 'text' && typeof b.text === 'string')
+    .map((b) => b.text)
+    .join('');
+
+  const jsonMatch = textoRespuesta.match(/\{[\s\S]*\}/);
+  return JSON.parse(jsonMatch ? jsonMatch[0] : textoRespuesta); // lanza si no es JSON valido
 }
 
-const data = await res.json();
-console.log('stop_reason:', data.stop_reason, '- bloques de contenido:', (data.content || []).map((b) => b.type).join(', '));
-
-// El modelo puede devolver bloques de "thinking" antes del bloque de texto final:
-// nos quedamos solo con los bloques de tipo "text" concatenados.
-const textoRespuesta = (data.content || [])
-  .filter((b) => b && b.type === 'text' && typeof b.text === 'string')
-  .map((b) => b.text)
-  .join('');
-
+// El modelo a veces consume todo el presupuesto de tokens "pensando" antes de
+// escribir la respuesta (variable de una ejecucion a otra) y se queda sin
+// texto que devolver. Con 16000 de margen debería ser raro, pero por si acaso
+// reintentamos una vez antes de rendirnos.
 let parte;
 try {
-  const jsonMatch = textoRespuesta.match(/\{[\s\S]*\}/);
-  parte = JSON.parse(jsonMatch ? jsonMatch[0] : textoRespuesta);
+  parte = await llamarClaude();
 } catch (e) {
-  console.error('No se pudo interpretar la respuesta de la IA como JSON. Respuesta completa de la API:');
-  console.error(JSON.stringify(data).slice(0, 4000));
-  process.exit(1);
+  console.error('Primer intento fallido:', e.message || e);
+  console.log('Reintentando una vez más...');
+  try {
+    parte = await llamarClaude();
+  } catch (e2) {
+    console.error('Segundo intento también fallido:', e2.message || e2);
+    process.exit(1);
+  }
 }
 
 console.log('Decisión de hoy:', parte.decision, '-', parte.resumen_corto);
