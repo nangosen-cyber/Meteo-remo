@@ -230,34 +230,28 @@
   <h1>PARTE DE<br>LA DÁRSENA</h1>
   <div class="fecha-wrap">
     <span class="fecha-label">Datos de</span>
-    <p class="fecha">Miércoles, 16 de septiembre de 2026</p>
+    <p class="fecha">Jueves, 17 de septiembre de 2026</p>
   </div>
 
   <div class="status-card">
-    <div class="status-flag" style="background:var(--coral)"></div>
+    <div class="status-flag" style="background:var(--green)"></div>
     <div>
-      <div class="status-word" style="color:var(--coral)">PARCIAL</div>
-      <div class="status-sub">Tramuntana suave a primera hora; Gregal fuerte desde mediodía — suspensión desde las 14h por alerta naranja de lluvias + amarilla de tormentas</div>
+      <div class="status-word" style="color:var(--green)">AGUA</div>
+      <div class="status-sub">Tramuntana moderada a primera hora → Levante moderado desde mediodía (baja al final de la tarde)</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL miércoles 16 de septiembre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEREOLÓGICA DEL jueves 17 de septiembre
 
 Buenas días!
 
-Tramuntana suave a primera hora; Gregal fuerte a partir de mediodía.
+Tramuntana moderada a primera hora; Levante moderado a partir de mediodía, y que bajará de intensidad a última hora de la tarde.
 
-Entrenamiento en el agua durante la mañana.
+Entrenamiento en el agua.
 
-⚠️ La AEMET activa la ALERTA NARANJA por LLUVIAS y la ALERTA AMARILLA por TORMENTAS a partir de las 16h ⚠️
-
-Siguiendo las recomendaciones del Centro de Coordinación de Emergencias de la Generalitat Valenciana, se suspende toda actividad al aire libre a partir de las 14:00h.
-
-Las clases de la tarde dentro de ese horario no contarán como realizadas y os podréis apuntar en otros horarios durante el mes.
-
-No os olvideis traer algún tipo de protección solar y agua a los entrenamientos de la mañana.
+No os olvideis traer algún tipo de protección solar y agua a los entrenamientos.
 
 Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodbuster)</p>
     <button class="copy-btn" onclick="copyBulletin(this)">Copiar texto</button>
@@ -266,13 +260,12 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM (00-09h)</dt><dd>Predominio N/NNE con algo de NNW (Tablademareas), 15-20 km/h ≈ 8-11 kts → Tramuntana suave. Windfinder coincide con NNE, 6-7 kts a esas horas</dd></div>
-      <div><dt>Viento mediodía (10-15h)</dt><dd>N/NNE/NE, 25-31 km/h ≈ 13.5-16.7 kts → Gregal fuerte (Windfinder confirma 15-17 kts NNE hacia mediodía); rolando a ENE/E (Llevant) por la tarde-noche</dd></div>
-      <div><dt>Estado del mar</dt><dd>Hs 0.3-0.6 m según Windfinder, en el límite agua/dársena; se mantiene el criterio habitual de AGUA para la mañana</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>AEMET municipio Valencia muestra probabilidad de lluvia 65% (12-18h) y 100% (18-24h) en litoral norte de Valencia (zona 774602). Según contexto conocido del día: ALERTA NARANJA por lluvias + ALERTA AMARILLA por tormentas activas desde las 16h. Aplicando criterio de la Generalitat (naranja lluvia + amarilla tormenta simultáneas), la suspensión preventiva de actividad al aire libre se adelanta a las 14:00h, aunque AEMET indique inicio a las 16h</dd></div>
-      <div><dt>Decisión mañana vs tarde</dt><dd>PARCIAL: la mañana (hasta 14h) se mantiene entrenamiento en el agua con normalidad; a partir de las 14h se suspende toda actividad exterior</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, principal), Windfinder Marina Valencia (viento + olas, contraste), AEMET municipio Valencia (probabilidad de lluvia y aviso litoral norte)</dd></div>
-      <div><dt>Sin acceso</dt><dd>Windguru (JavaScript, no carga); AEMET marítima val1 no mostró detalle específico de zona val1 en el texto extraído; tabla detallada de avisos AEMET ('See table in detail') no accesible con el texto plano, se infiere nivel naranja/amarillo por contexto conocido del día</dd></div>
+      <div><dt>Viento AM (00-09h)</dt><dd>Predominio N/NNE (Tramuntana), 11-16 kts según Tablademareas (6-16 kts) y Windfinder (11-14 kts, ráfagas hasta 18 kts); algún valor puntual NNW/SW aislado. Intensidad: moderado</dd></div>
+      <div><dt>Viento PM (12-17h)</dt><dd>Rotación a ENE/E (Levante), 10-13 kts (Tablademareas 8-13 kts, Windfinder 8-13 kts). A partir de mediodía. Cae claramente desde las 17h (10 kts) hacia la noche (3-4 kts), >40% de caída</dd></div>
+      <div><dt>Estado del mar</dt><dd>Hs 0.5-0.7 m durante todo el día (Windfinder), periodo 3-5 s. Compatible con actividad en agua/dársena</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>No se pudo verificar el nivel exacto del aviso vigente en 'Warnings. Litoral norte de Valencia' (la tabla detallada no cargó con web_fetch). Probabilidad de lluvia prevista del 100% en la franja 06-12h y 95% en 12-18h según AEMET municipio Valencia, sin confirmación de nivel de alerta oficial (amarilla/naranja). Se recomienda revisión manual antes de publicar por si existiera aviso naranja de lluvia/tormenta no detectado</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, OK), Windfinder Marina Valencia (viento+olas, OK), AEMET municipio Valencia (parcial, sin detalle de tabla de avisos), AEMET marítima val1 (sin datos específicos del área)</dd></div>
+      <div><dt>Sin acceso</dt><dd>Tabla detallada de avisos AEMET (litoral norte 774602) no accesible con web_fetch; AEMET marítima val1 no devolvió predicción textual específica para el área Valencia-Murcia; Windguru no consultado (JavaScript)</dd></div>
     </dl>
   </div>
 
