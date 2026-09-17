@@ -234,10 +234,10 @@
   </div>
 
   <div class="status-card">
-    <div class="status-flag" style="background:var(--green)"></div>
+    <div class="status-flag" style="background:var(--amber)"></div>
     <div>
-      <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Tramuntana suave a primera hora → Levante suave desde mediodía</div>
+      <div class="status-word" style="color:var(--amber)">DARSENA</div>
+      <div class="status-sub">Tramuntana flojo a primera hora → Levante flojo desde mediodía; mar en cota de dársena (Hs 0.6-0.7m)</div>
     </div>
   </div>
 
@@ -247,9 +247,9 @@
 
 Buenas días!
 
-Tramuntana suave a primera hora; Levante suave a partir de mediodía, hasta el final de la jornada.
+Tramuntana flojo a primera hora; Levante flojo a partir de mediodía.
 
-Entrenamiento en el agua.
+Entrenamiento en la dársena.
 
 No os olvideis traer algún tipo de protección solar y agua a los entrenamientos.
 
@@ -260,12 +260,12 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM</dt><dd>Tablademareas 00-09h: NNE/N predominante, 3-16 km/h (~2-9 kts) → Tramuntana suave</dd></div>
-      <div><dt>Viento PM</dt><dd>Tablademareas 12-21h: ENE/NE, 8-16 km/h (~4-9 kts) → Levante suave desde mediodía, sin caída clara (17h 15km/h → 20h 10km/h, caída ~33%, no llega al 40% para indicar bajada) → 'hasta el final de la jornada'</dd></div>
-      <div><dt>Estado del mar</dt><dd>Windfinder Marina Valencia: Hs 0.6-0.7 m durante todo el día, oleaje corto (3-5s)</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>AEMET municipio Valencia: probabilidad de lluvia 100% (06-12h) y 80% (12-18h); observación en tiempo real de Windfinder a las 11:24h marca 'Lluvia'. La sección 'Warnings. Litoral norte de Valencia' aparece en la página pero su contenido detallado no se pudo extraer (enlace 'See table in detail' sin texto accesible), por lo que NO se puede confirmar si hay aviso amarillo/naranja activo. Revisar manualmente en aemet.es antes de publicar por si hubiera alerta de lluvia/tormenta como la del 16/09.</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora) ✅ | Windfinder Marina Valencia ✅ | AEMET municipio Valencia ✅ (tabla de probabilidad/temperatura cargó, pero sin detalle de avisos) | AEMET marítima val1 ⚠️ sin contenido de avisos específico | Windguru no consultado (JS, no carga con web_fetch)</dd></div>
-      <div><dt>Sin acceso</dt><dd>Detalle completo de la tabla 'Warnings. Litoral norte de Valencia' (AEMET municipio) y de avisos en AEMET marítima val1 — no se pudo verificar el nivel exacto de alerta a pesar de indicios de lluvia (100% prob. mañana + lluvia observada ahora). Recomendable revisión manual de Nando.</dd></div>
+      <div><dt>Viento AM</dt><dd>NNE predominante (Tramuntana), 6-9 kts entre las 07h-10h (tablademareas: 14-16 km/h ≈ 7.5-8.6 kts). Windfinder confirma 9 kts NNE en observación de las 11:32h.</dd></div>
+      <div><dt>Viento PM</dt><dd>ENE predominante (Levante) desde mediodía, 5-9 kts (tablademareas: 9-16 km/h), virando a NE por la tarde-noche, intensidad similar (flojo).</dd></div>
+      <div><dt>Estado del mar</dt><dd>Hs 0.6-0.7 m constante durante todo el día (Windfinder, 02h-23h) → rango de dársena (0.5-1.25 m)</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>No se detectó alerta activa de nivel naranja/rojo (calor, lluvia, tormenta, viento, costera) en el texto accesible de AEMET municipio ni marítima val1. Probabilidad de lluvia alta (100% 06-12h, 80% 12-18h) y estado 'Lluvia' en Windfinder, pero sin nivel de aviso confirmado. Temp. máx. prevista 24°C (sin riesgo de calor).</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (ok, viento hora a hora), Windfinder Marina Valencia (ok, viento+olas), AEMET municipio Valencia (carga parcial, temperatura ok pero bloque de avisos no renderiza texto), AEMET marítima val1 (solo menú, sin predicción textual)</dd></div>
+      <div><dt>Sin acceso</dt><dd>El bloque 'Warnings. Litoral norte de Valencia' de AEMET municipio y la predicción textual de AEMET marítima val1 no devolvieron contenido legible (probablemente widgets JavaScript); no se puede confirmar al 100% ausencia de alerta naranja/amarilla, se recomienda verificación manual</dd></div>
     </dl>
   </div>
 
