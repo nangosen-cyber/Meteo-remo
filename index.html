@@ -243,7 +243,7 @@
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEREOLÓGICA DEL lunes 21 de septiembre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL lunes 21 de septiembre
 
 Buenas días!
 
@@ -260,12 +260,13 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM (00-11h)</dt><dd>Ponent (W/WSW), 2-11 km/h ≈ 1-6 kts — flojo</dd></div>
-      <div><dt>Viento PM (12-20h)</dt><dd>Migjorn (S/SSE), subiendo hasta 17-18 km/h ≈ 9-10 kts entre 14h-20h — moderado, sin caída significativa hasta el final de la jornada</dd></div>
-      <div><dt>Estado del mar</dt><dd>Hs 0.2-0.3 m durante todo el día (Windfinder) → condiciones de agua</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>Sin alertas activas detectadas: temp. máx. 30°C (muy por debajo del umbral amarillo de 36°C), probabilidad de lluvia 0% todo el día, sin contenido de aviso visible en el bloque 'Warnings. Litoral norte de Valencia'</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, principal), Windfinder Marina Valencia (Hs y viento), AEMET municipio Valencia (temperatura y alertas)</dd></div>
-      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió predicción textual específica (solo página de selección de área/costa); Windguru no se consulta por limitación JavaScript</dd></div>
+      <div><dt>Viento AM</dt><dd>0-9h: predominio W (Ponent), 4-11 km/h (~2-6 kts). Tablademareas: 0h W 4, 1h W 6, 2-4h W 9, 5-8h WSW 9-11, 9h W 10. Windfinder confirma 'actual 4 kts Oeste-Suroeste' de madrugada.</dd></div>
+      <div><dt>Viento PM</dt><dd>Giro a SSE (Migjorn) desde ~12-13h, intensificando: 13h 10 km/h, 14h 13, 15h 15, 16h 18, 17-18h 19 km/h (~9.7-10.3 kts, moderado), bajando de nuevo por la noche (20h 17, 21h 13, 22h 11, 23h 7 km/h). Windfinder: pico 10 kts a las 17h, sin caída ≥40% entre 17h-20h (10→8 kts, ~20%), por lo que se mantiene 'hasta el final de la jornada'.</dd></div>
+      <div><dt>Estado del mar</dt><dd>Hs 0.2-0.3 m todo el día (Windfinder Marina Valencia) → criterio Hs<0.5m = agua.</dd></div>
+      <div><dt>Temperatura máxima</dt><dd>30°C (AEMET municipio Valencia, Mon 21). Sin alerta por calor (muy por debajo de amarilla ≥36°C).</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>Sin avisos activos detectados. Probabilidad de lluvia 0% todo el día. Apartado 'Warnings. Litoral norte de Valencia' no muestra ningún nivel de aviso activo hoy.</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora) ✅; Windfinder Marina Valencia (viento + Hs) ✅; AEMET municipio Valencia (temp máx + alertas litoral norte) ✅; AEMET marítima val1 ⚠️ sin predicción textual específica accesible, solo menú.</dd></div>
+      <div><dt>Sin acceso</dt><dd>Windguru La Patacona (JavaScript, no carga con web_fetch, como es habitual).</dd></div>
     </dl>
   </div>
 
