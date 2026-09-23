@@ -237,17 +237,17 @@
     <div class="status-flag" style="background:var(--green)"></div>
     <div>
       <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Tramuntana moderado a primera hora → Levante moderado desde mediodía, bajando de intensidad al final de la tarde</div>
+      <div class="status-sub">Tramuntana suave a primera hora → Gregal moderado desde mediodía, bajando por la tarde</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL miércoles 23 de septiembre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEREOLÓGICA DEL miércoles 23 de septiembre
 
 Buenas días!
 
-Tramuntana moderado a primera hora; Levante moderado a partir de mediodía, y que bajará de intensidad a última hora de la tarde.
+Tramuntana suave a primera hora; Gregal moderado a partir de mediodía, y que bajará de intensidad a última hora de la tarde.
 
 Entrenamiento en el agua.
 
@@ -260,14 +260,12 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM (00-10h)</dt><dd>Tramuntana N/NNE, 16-22 km/h (~9-12 kts), moderado — Tablademareas</dd></div>
-      <div><dt>Viento mediodía-tarde (11-17h)</dt><dd>Vira a NE/ENE/E (Levante), 18-22 km/h (~10-12 kts), moderado — Tablademareas</dd></div>
-      <div><dt>Viento última tarde (18-20h)</dt><dd>ESE/E bajando a 6-15 km/h (~3-8 kts), cae >60% respecto al pico de las 15h — Tablademareas</dd></div>
-      <div><dt>Estado del mar (Hs)</dt><dd>0.2-0.5 m durante todo el día — Windfinder → condición de agua</dd></div>
-      <div><dt>Temperatura máx</dt><dd>28°C (06-12h), sin alerta amarilla/naranja de calor — AEMET municipio Valencia</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>Sin avisos activos detectados en litoral norte (774602); probabilidad de lluvia 0% hoy; no se identifica alerta de lluvia/tormenta/viento/costera para el 23/09</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas ✅, Windfinder Marina Valencia ✅, AEMET municipio Valencia ✅ (tabla warnings sin detalle expandido), AEMET marítima val1 ⚠️</dd></div>
-      <div><dt>Sin acceso</dt><dd>Windguru La Patacona no cargó (JavaScript); AEMET marítima val1 solo mostró página de selección de área, sin texto de predicción específico</dd></div>
+      <div><dt>Viento AM</dt><dd>N/NNE (Tramuntana) 16-21 km/h ≈ 9-11 kts entre 0h-10h (Tablademareas); Windfinder confirma 8-9 kts N-NNE</dd></div>
+      <div><dt>Viento PM</dt><dd>NE (Gregal) 21-23 km/h ≈ 11-12.4 kts entre 12h-16h (Tablademareas), rotando a ENE/E/ESE y cayendo a 9-12 km/h (≈5-6.5 kts) hacia las 19h-21h (caída ≈42% desde 17h); Windfinder muestra 10 kts a las 14h bajando a 4 kts a las 20h</dd></div>
+      <div><dt>Estado del mar</dt><dd>Hs 0.3-0.5 m durante todo el día (Windfinder) → condición de agua</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>No se pudo verificar: tanto AEMET municipio Valencia como AEMET marítima val1 devolvieron error HTTP 502. Sin alertas conocidas activas a la hora de generar el boletín; se aplica criterio fino agua/dársena/tierra por falta de confirmación de alertas.</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas.com (viento hora a hora) y Windfinder Marina Valencia (viento + olas) consultadas correctamente</dd></div>
+      <div><dt>Sin acceso</dt><dd>AEMET municipio Valencia (id46250) y AEMET marítima val1 — ambas fallaron con HTTP 502; no se pudo confirmar ausencia/presencia de alertas de calor, lluvia, tormenta, viento o costeras</dd></div>
     </dl>
   </div>
 
