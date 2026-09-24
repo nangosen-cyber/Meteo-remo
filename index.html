@@ -230,24 +230,24 @@
   <h1>PARTE DE<br>LA DÁRSENA</h1>
   <div class="fecha-wrap">
     <span class="fecha-label">Datos de</span>
-    <p class="fecha">Miércoles, 23 de septiembre de 2026</p>
+    <p class="fecha">Jueves, 24 de septiembre de 2026</p>
   </div>
 
   <div class="status-card">
     <div class="status-flag" style="background:var(--green)"></div>
     <div>
       <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Tramuntana suave a primera hora → Gregal moderado desde mediodía, bajando de intensidad por la tarde</div>
+      <div class="status-sub">Ponent flojo a primera hora → Garbí suave desde mediodía, hasta el final de la jornada</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL miércoles 23 de septiembre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL jueves 24 de septiembre
 
 Buenas días!
 
-Tramuntana suave a primera hora; Gregal moderado a partir de mediodía, y que bajará de intensidad a última hora de la tarde.
+Ponent flojo a primera hora; Garbí suave a partir de mediodía, hasta el final de la jornada.
 
 Entrenamiento en el agua.
 
@@ -260,12 +260,12 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM</dt><dd>Predominante N/NNE (Tramuntana), 16-21 km/h (~9-11 kts) entre las 00h y las 10h (Tablademareas)</dd></div>
-      <div><dt>Viento PM</dt><dd>Gira a NE (Gregal) desde las 11-12h, 18-23 km/h (~10-12.4 kts), máximo hacia 13-15h; a partir de 17h rota a ENE/E (Levante) y baja progresivamente hasta 9-10 km/h (~5-6 kts) a las 20-21h — caída >40% entre 17h y 20h (Tablademareas)</dd></div>
-      <div><dt>Estado del mar</dt><dd>Hs entre 0.3 y 0.5 m durante todo el día, tendencia a bajar por la tarde (Windfinder Marina Valencia)</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>No verificable hoy: tanto la página de municipio (Valencia, litoral norte 774602) como la marítima (val1) devolvieron error HTTP 502</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas.com (ok, viento hora a hora); Windfinder Marina Valencia (ok, viento/olas, sin dirección horaria textual detallada); Windguru no consultado (JavaScript); AEMET municipio y marítima fallaron (502)</dd></div>
-      <div><dt>Sin acceso</dt><dd>AEMET municipio Valencia y AEMET marítima val1 (HTTP 502) — no se pudo confirmar ausencia/presencia de alertas de calor, lluvia, tormenta, viento o costeras para hoy; se procede con el criterio fino de viento/mar a falta de alerta detectada</dd></div>
+      <div><dt>Viento AM (00-11h)</dt><dd>Tablademareas: NNW/NW/W/WNW 3-6 km/h (~2-3 kts) → Ponent flojo. Windfinder confirma 2-3 kts Oeste en la madrugada.</dd></div>
+      <div><dt>Viento PM (12-20h)</dt><dd>Tablademareas: SSE/SE virando a SE, subiendo de 5 a 15 km/h (~3-8 kts) → Garbí suave. Windfinder: 7-8 kts máx a las 14h-17h. Caída 17h-20h (15→12 km/h, ~20%) insuficiente para 'baja a última hora'; se mantiene 'hasta el final de la jornada'.</dd></div>
+      <div><dt>Estado del mar (Hs)</dt><dd>Windfinder: 0.1-0.3 m todo el día → agua</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>Sin alertas activas en litoral norte de Valencia (774602); probabilidad de lluvia 0% hoy; temperatura máxima prevista 28°C, muy por debajo de umbral amarillo (36°C). No se detectan avisos de lluvia, tormenta, viento ni costeros para hoy.</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas ✅, Windfinder Marina Valencia ✅, AEMET municipio Valencia ✅ (sin alertas visibles)</dd></div>
+      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 ⚠️ no devolvió predicción textual específica de la zona, solo la página de navegación general; se usó Tablademareas + Windfinder como sustitutos según protocolo.</dd></div>
     </dl>
   </div>
 
