@@ -237,17 +237,17 @@
     <div class="status-flag" style="background:var(--green)"></div>
     <div>
       <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Tramuntana suave a primera hora → Levante suave desde mitad mañana</div>
+      <div class="status-sub">Tramuntana flojo a primera hora; Levante flojo desde mediodía rolando a Garbí por la tarde</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEREOLÓGICA DEL sábado 26 de septiembre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL sábado 26 de septiembre
 
 Buenas días!
 
-Tramuntana suave a primera hora; Levante suave a partir de mitad mañana, hasta el final de la jornada.
+Tramuntana flojo a primera hora; Levante flojo a partir de mediodía, rolando a Garbí flojo por la tarde y que bajará de intensidad a última hora de la tarde.
 
 Entrenamiento en el agua.
 
@@ -260,12 +260,15 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM (00-10h)</dt><dd>N/NNE 3-7 km/h (~2-4 kts), con un NNW puntual a las 8h (Tablademareas) → Tramuntana suave/flojo</dd></div>
-      <div><dt>Viento PM (11-21h)</dt><dd>Mezcla ENE/E (predominante, 7h) y ESE (4h, mediodía-tarde), 9-14 km/h (~5-7.6 kts) (Tablademareas) → Levante suave; sin caída ≥40% entre 17-20h, se mantiene hasta el final</dd></div>
-      <div><dt>Estado del mar</dt><dd>Hs 0.1-0.3 m durante todo el día (Windfinder) → condiciones de agua</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>Litoral norte de Valencia: sin avisos activos visibles. Prob. lluvia 0% hoy, Tmáx prevista 28°C (06-12h) / 26°C (12-18h). Sin alertas de calor, lluvia, tormenta ni viento</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, fuente principal), Windfinder Marina Valencia (viento+olas, contraste), AEMET municipio Valencia (temperatura y alertas litoral norte). Windguru no consultado (JavaScript, no carga)</dd></div>
-      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió predicción textual específica, solo menú de navegación; no se pudo confirmar avisos costeros adicionales</dd></div>
+      <div><dt>Viento AM (00-09h)</dt><dd>N/NNE 7-11 km/h (≈4-6 kts) — Tramuntana flojo (Tablademareas)</dd></div>
+      <div><dt>Viento mediodía (12-15h)</dt><dd>ENE/E 13-15 km/h (≈7-8 kts) — Levante flojo (Tablademareas)</dd></div>
+      <div><dt>Viento tarde (16-19h)</dt><dd>ESE 11-15 km/h (≈6-8 kts) — Garbí flojo, con caída a 20h a 9 km/h (≈5 kts), >40% de bajada (Tablademareas)</dd></div>
+      <div><dt>Viento (Windfinder, ref.)</dt><dd>Dirección E predominante, 1-8 kts a lo largo del día, ráfagas máx 8-9 kts a mediodía/tarde</dd></div>
+      <div><dt>Estado del mar</dt><dd>Hs 0.2-0.3 m todo el día (Windfinder) → apto para agua</dd></div>
+      <div><dt>Temperatura máxima</dt><dd>28°C (AEMET municipio Valencia) — sin alerta de calor</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>No se detecta ninguna alerta activa (amarilla/naranja/roja) para el litoral norte de Valencia hoy; probabilidad de lluvia 0% para el sábado 26</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora) ✅, Windfinder Marina Valencia (viento+olas) ✅, AEMET municipio Valencia (temperatura y alertas) ✅</dd></div>
+      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió contenido específico de predicción/avisos, solo estructura de navegación; Windguru no se intenta por ser JavaScript</dd></div>
     </dl>
   </div>
 
