@@ -237,17 +237,17 @@
     <div class="status-flag" style="background:var(--green)"></div>
     <div>
       <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Ponent flojo a primera hora → Garbí suave desde mediodía, bajando a última hora de la tarde</div>
+      <div class="status-sub">Tramuntana flojo a primera hora → Garbí suave desde mediodía, bajando a última hora de la tarde</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL domingo 27 de septiembre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEREOLÓGICA DEL domingo 27 de septiembre de 2026
 
 Buenas días!
 
-Ponent flojo a primera hora; Garbí suave a partir de mediodía, y que bajará de intensidad a última hora de la tarde.
+Tramuntana flojo a primera hora; Garbí suave a partir de mediodía, y que bajará de intensidad a última hora de la tarde.
 
 Entrenamiento en el agua.
 
@@ -260,12 +260,12 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM</dt><dd>00-09h: N/NNE/NNW/NW variable, 5-7 km/h (~2-4 kts). Windfinder confirma NW ~3 kts constante en la madrugada. → Ponent flojo</dd></div>
-      <div><dt>Viento PM</dt><dd>Rola a E/ESE/SE desde las 12-13h; 12h NE 7, 13h E 9, 14h ESE 12, 15h ESE 14, 16h SE 15, 17h ESE 14, 18h ESE 15 km/h (máx ~8 kts). Windfinder: 14h 7kts, 17h 8kts, 20h 5kts. Caída de ~47% entre 17h-20h → Garbí suave desde mediodía, bajando última hora de la tarde</dd></div>
-      <div><dt>Estado del mar</dt><dd>Hs 0.3 m por la mañana, subiendo a 0.4-0.5 m por la tarde/noche (Windfinder) → dentro de criterio 'agua' (<0.5 m gran parte del día)</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>Sin alertas activas relevantes para hoy en litoral norte de Valencia (774602). Probabilidad de lluvia 0% domingo, temp máx 27-28°C (muy por debajo de umbral de calor), sin mención de aviso de tormenta/viento/costero para el 27/09</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora), Windfinder Marina Valencia (viento + olas), AEMET municipio Valencia (temperatura y avisos litoral norte)</dd></div>
-      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió predicción textual específica para hoy (solo estructura de navegación); no se detectaron alertas relevantes que contradigan las otras fuentes</dd></div>
+      <div><dt>Viento AM (00-09h)</dt><dd>Tablademareas: N/NNE con algo de NNW, 6-10 km/h (~3-5.4 kts) → Tramuntana flojo. Windfinder confirma 3 kts NNE en horas de la mañana.</dd></div>
+      <div><dt>Viento PM (12-20h)</dt><dd>Tablademareas: viraje a SSE/SE/ESE desde las 12-13h, 9-14 km/h (~5-7.6 kts), máximo hacia 15-18h, cayendo a 7 km/h (~3.8 kts) a las 20h → Garbí suave, entra a partir de mediodía, baja de intensidad a última hora de la tarde (caída ~50% entre 17h y 20h). Windfinder confirma máx 8 kts a las 17h, bajando a 5 kts a las 20h.</dd></div>
+      <div><dt>Estado del mar</dt><dd>Windfinder: Hs 0.3-0.4 m todo el día domingo → condición de agua (Hs<0.5m)</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>Sin alertas activas relevantes detectadas para litoral norte de Valencia. Temp máx prevista 28°C (12-18h), probabilidad de lluvia 0% para hoy domingo. No se aprecia aviso naranja/rojo de ningún tipo en la tabla scrapeada.</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora), Windfinder Marina Valencia (viento + olas), AEMET municipio Valencia (temperatura y alertas litoral norte)</dd></div>
+      <div><dt>Sin acceso</dt><dd>Windguru La Patacona (JavaScript, no carga con web_fetch); AEMET marítima val1 (página de selección general, sin texto de predicción específico del día accesible)</dd></div>
     </dl>
   </div>
 
