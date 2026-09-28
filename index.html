@@ -237,17 +237,17 @@
     <div class="status-flag" style="background:var(--green)"></div>
     <div>
       <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Tramuntana flojo a primera hora → Levante suave desde mediodía</div>
+      <div class="status-sub">Tramuntana flojo a primera hora → Llevant suave desde mediodía</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL lunes 28 de septiembre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEREOLÓGICA DEL lunes 28 de septiembre
 
 Buenas días!
 
-Tramuntana flojo a primera hora; Levante suave a partir de mediodía, hasta el final de la jornada.
+Tramuntana flojo a primera hora; Llevant suave a partir de mediodía, hasta el final de la jornada.
 
 Entrenamiento en el agua.
 
@@ -260,12 +260,12 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM</dt><dd>00-11h predominio N/NNE con dos horas NNW puntuales (07-08h); intensidad 8-12 km/h (≈4-6.5 kts) → Tramuntana flojo. Fuente: Tablademareas</dd></div>
-      <div><dt>Viento PM</dt><dd>Desde las 12h gira a ENE/E puro (Levante); 10-17 km/h (≈5-9 kts), pico puntual 23 km/h (≈12.4 kts) a las 22h ya de noche; estable durante la tarde sin caída ≥40% entre 17-20h → Levante suave. Fuente: Tablademareas</dd></div>
-      <div><dt>Estado del mar</dt><dd>Hs 0.3-0.5 m durante todo el día (Windfinder Marina Valencia), predominantemente <0.5 m → criterio agua</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>Sin alerta activa visible en tabla 'Warnings. Litoral norte de Valencia' (código 774602); probabilidad de lluvia 65% pero sin aviso oficial de fenómeno adverso; Tmáx prevista 27°C, sin alerta de calor</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora) ✅; Windfinder Marina Valencia (olas/Hs) ✅; AEMET municipio Valencia ✅ (tabla de avisos sin contenido visible = sin alerta); AEMET marítima val1 ⚠️ (página de selección de área, sin predicción textual específica del día)</dd></div>
-      <div><dt>Sin acceso</dt><dd>Windguru La Patacona (JavaScript, no carga); AEMET marítima val1 no devolvió predicción textual concreta para hoy</dd></div>
+      <div><dt>Viento AM</dt><dd>Tramuntana N/NNE 4-6.5 kts (00-06h), con NNW puntual 11 km/h (~6 kts) a las 07-08h; flojo (Tablademareas)</dd></div>
+      <div><dt>Viento PM</dt><dd>Llevant (ENE/E) desde las 12h, 5-9.2 kts, máximo ~17 km/h (9.2 kts) hacia las 16h; suave (Tablademareas). Dato actual Windfinder 13h: Este 6 kts, coherente</dd></div>
+      <div><dt>Estado del mar</dt><dd>Hs 0.3-0.5 m durante todo el día (Windfinder Marina Valencia) → condiciones de agua, sin oleaje relevante</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>Sin alerta de calor (Tmáx prevista 27°C). Sección 'Warnings. Litoral norte de Valencia' no mostró contenido de aviso activo en el texto extraído. Probabilidad de lluvia tarde ~65% en la tabla AEMET, pero no se confirma aviso naranja/amarillo específico de lluvia o tormenta; no se aplica suspensión por falta de confirmación explícita de aviso oficial</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora), Windfinder Marina Valencia (viento actual + olas), AEMET municipio Valencia (temperatura y warnings)</dd></div>
+      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió contenido de predicción textual útil (solo menú de navegación); Windguru no se intenta (JavaScript)</dd></div>
     </dl>
   </div>
 
