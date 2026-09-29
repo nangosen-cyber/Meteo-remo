@@ -237,17 +237,17 @@
     <div class="status-flag" style="background:var(--green)"></div>
     <div>
       <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Tramuntana flojo a primera hora → Garbí moderado desde mediodía, bajando al final de la tarde</div>
+      <div class="status-sub">Gregal flojo a primera hora → Garbí moderado desde mediodía, bajando a última hora de la tarde</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEREOLÓGICA DEL martes 29 de septiembre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL martes 29 de septiembre
 
 Buenas días!
 
-Tramuntana flojo a primera hora; Garbí moderado a partir de mediodía, que bajará de intensidad a última hora de la tarde.
+Gregal flojo a primera hora; Garbí moderado a partir de mediodía, y bajará de intensidad a última hora de la tarde.
 
 Entrenamiento en el agua.
 
@@ -260,12 +260,12 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM</dt><dd>NNE/NE dominante 00-11h (Tramuntana), 3-6.5 kts → flojo</dd></div>
-      <div><dt>Viento PM</dt><dd>Rotación a E/SE/ESE desde 13h (Garbí), pico 10.3 kts a las 18h (moderado); cae a 4.9 kts a las 20h (-49% entre 17-20h) → baja a última hora de la tarde</dd></div>
-      <div><dt>Estado del mar</dt><dd>Hs 0.5 m constante todo el día (Windfinder) → dársena/agua, se toma como agua por ser valor límite</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>No se detecta nivel/color de aviso en el texto extraído de AEMET municipio Valencia (bloque 'Warnings. Litoral norte de Valencia' sin contenido textual); Tmáx prevista hoy 29°C (sin alerta por calor). Probabilidad de lluvia 100% aparece en la tabla diaria pero sin confirmación de aviso naranja/amarillo de lluvia o tormenta — recomendable revisión manual de la página de avisos</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora) ✅; Windfinder Marina Valencia (velocidad viento + olas) ✅; AEMET municipio Valencia (temperatura + zona de avisos) ✅ parcial (tabla de avisos no renderiza nivel)</dd></div>
-      <div><dt>Sin acceso</dt><dd>AEMET marítima val1: página requiere selección interactiva de área/costa, no se obtuvo texto de predicción ni avisos</dd></div>
+      <div><dt>Viento AM</dt><dd>NE/NNE (Gregal) 00-11h, 6-12 km/h (~3-6.5 kt) — flojo</dd></div>
+      <div><dt>Viento PM</dt><dd>E/ESE/SE (Garbí) desde 13h, subiendo a 13-19 km/h (~7-10.3 kt) entre 16h-19h — moderado; cae a 9 km/h (~4.9 kt) a las 20h (caída ~50% entre 17h-20h)</dd></div>
+      <div><dt>Estado del mar</dt><dd>Hs 0.5 m constante todo el día (Windfinder)</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>No se detectó nivel de alerta (amarillo/naranja/rojo) explícito en el texto extraído de AEMET municipio Valencia; tabla de avisos 'Litoral norte de Valencia' no accesible en texto plano (requiere JS). Probabilidad de lluvia 100% en franjas 12-18h y 18-24h según previsión de 7 días, pero esto es probabilidad de precipitación, no un aviso activo confirmado.</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora) ✅, Windfinder Marina Valencia (Hs y viento) ✅, AEMET municipio Valencia (temp y prob. lluvia) ✅ parcial</dd></div>
+      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 solo devolvió menú de navegación genérico, sin predicción textual específica para la zona val1; tabla detallada de avisos de AEMET municipio Valencia no pudo extraerse (contenido dinámico JS)</dd></div>
     </dl>
   </div>
 
