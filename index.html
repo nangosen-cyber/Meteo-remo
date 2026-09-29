@@ -230,24 +230,24 @@
   <h1>PARTE DE<br>LA DÁRSENA</h1>
   <div class="fecha-wrap">
     <span class="fecha-label">Datos de</span>
-    <p class="fecha">Lunes, 28 de septiembre de 2026</p>
+    <p class="fecha">Martes, 29 de septiembre de 2026</p>
   </div>
 
   <div class="status-card">
     <div class="status-flag" style="background:var(--green)"></div>
     <div>
       <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Tramuntana flojo a primera hora → Llevant suave desde mediodía</div>
+      <div class="status-sub">Mistral flojo de madrugada → Levante flojo desde mediodía (baja a última hora de la tarde)</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEREOLÓGICA DEL lunes 28 de septiembre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEREOLÓGICA DEL martes 29 de septiembre
 
 Buenas días!
 
-Tramuntana flojo a primera hora; Llevant suave a partir de mediodía, hasta el final de la jornada.
+Mistral flojo durante la madrugada (viento muy suave y variable del NNW/NW); Levante flojo a partir de mediodía, y que bajará de intensidad a última hora de la tarde.
 
 Entrenamiento en el agua.
 
@@ -260,12 +260,14 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM</dt><dd>Tramuntana N/NNE 4-6.5 kts (00-06h), con NNW puntual 11 km/h (~6 kts) a las 07-08h; flojo (Tablademareas)</dd></div>
-      <div><dt>Viento PM</dt><dd>Llevant (ENE/E) desde las 12h, 5-9.2 kts, máximo ~17 km/h (9.2 kts) hacia las 16h; suave (Tablademareas). Dato actual Windfinder 13h: Este 6 kts, coherente</dd></div>
-      <div><dt>Estado del mar</dt><dd>Hs 0.3-0.5 m durante todo el día (Windfinder Marina Valencia) → condiciones de agua, sin oleaje relevante</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>Sin alerta de calor (Tmáx prevista 27°C). Sección 'Warnings. Litoral norte de Valencia' no mostró contenido de aviso activo en el texto extraído. Probabilidad de lluvia tarde ~65% en la tabla AEMET, pero no se confirma aviso naranja/amarillo específico de lluvia o tormenta; no se aplica suspensión por falta de confirmación explícita de aviso oficial</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora), Windfinder Marina Valencia (viento actual + olas), AEMET municipio Valencia (temperatura y warnings)</dd></div>
-      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió contenido de predicción textual útil (solo menú de navegación); Windguru no se intenta (JavaScript)</dd></div>
+      <div><dt>Viento madrugada (00-09h)</dt><dd>Predominio NNW/NW/N muy flojo, 2-8 km/h (~1-4 kts), con algunas horas E/NE (Tablademareas)</dd></div>
+      <div><dt>Viento mañana-mediodía (10-13h)</dt><dd>Rotación breve a NE/ENE (Gregal), 11-12 km/h (~6 kts)</dd></div>
+      <div><dt>Viento tarde (14-19h)</dt><dd>Levante (E) flojo, 12-18 km/h (~6.5-9.7 kts), máximo a las 17h; cae a 8 km/h (~4 kts) a las 19h y sigue bajando (Tablademareas)</dd></div>
+      <div><dt>Estado del mar (Hs)</dt><dd>0.4-0.5 m durante todo el día (Windfinder Marina Valencia) — límite bajo, compatible con agua</dd></div>
+      <div><dt>Temperatura</dt><dd>Máxima prevista 29°C, mínima 20°C (AEMET municipio Valencia) — sin riesgo de alerta por calor</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>No se detecta ninguna alerta activa (amarilla/naranja/roja) en litoral norte de Valencia (774602) ni en predicción marítima val1 para hoy</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, OK), Windfinder Marina Valencia (viento+olas, OK), AEMET municipio Valencia (OK, sin detalle de avisos activos), AEMET marítima val1 (página cargó pero sin texto de predicción específico)</dd></div>
+      <div><dt>Sin acceso</dt><dd>Windguru La Patacona no se consulta (JavaScript, no carga con web_fetch); AEMET marítima val1 solo mostró la estructura de navegación, sin predicción textual concreta para hoy</dd></div>
     </dl>
   </div>
 
