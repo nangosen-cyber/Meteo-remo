@@ -234,43 +234,40 @@
   </div>
 
   <div class="status-card">
-    <div class="status-flag" style="background:var(--amber)"></div>
+    <div class="status-flag" style="background:var(--coral)"></div>
     <div>
-      <div class="status-word" style="color:var(--amber)">DARSENA</div>
-      <div class="status-sub">Gregal moderado a fuerte durante toda la jornada + aviso especial AEMET por chubascos — entrenamiento en dársena</div>
+      <div class="status-word" style="color:var(--coral)">SUSPENDIDO</div>
+      <div class="status-sub">AEMET activa aviso especial por chubascos muy fuertes y persistentes (100% prob. lluvia todo el día) → se suspende el entrenamiento</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEREOLÓGICA DEL viernes 2 de octubre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL viernes 2 de octubre de 2026
 
 Buenas días!
 
-Gregal (NE) moderado a fuerte a primera hora, con rachas de hasta 16 kts de madrugada; se mantiene de componente Gregal/ENE entre 10 y 14 kts durante el resto de la jornada, sin bajar claramente de intensidad.
+⚠️ La AEMET activa un AVISO ESPECIAL por CHUBASCOS MUY FUERTES Y PERSISTENTES en el litoral norte de Valencia, con una probabilidad de lluvia del 100% durante toda la jornada ⚠️
 
-Entrenamiento en la dársena (oleaje entre 0,7 y 0,9 m durante todo el día).
+Debido a este fenómeno meteorológico adverso, nos vemos obligados a suspender el entrenamiento en el agua durante todo el día de hoy.
 
-⚠️ La AEMET mantiene un aviso especial por chubascos fuertes y persistentes para hoy en Valencia, con alta probabilidad de lluvia durante toda la jornada ⚠️
+Las clases de hoy no contarán como realizadas y os podréis apuntar en otros horarios durante el mes.
 
-Estad atentos a posibles actualizaciones en caso de que la intensidad de la lluvia obligue a modificar el entrenamiento.
+Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodbuster)
 
-No os olvideis traer algún tipo de protección para la lluvia además del material habitual.
-
-Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodbuster)</p>
+Gracias!</p>
     <button class="copy-btn" onclick="copyBulletin(this)">Copiar texto</button>
   </div>
 
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM</dt><dd>Gregal (NE/NNE), 10-16 kts según Tablademareas (pico ~16 kts a las 4h), 10-13 kts según Windfinder, dirección Nordeste constante</dd></div>
-      <div><dt>Viento PM</dt><dd>Gregal (NE/ENE), 10-14 kts, sin cambio claro de componente respecto a la mañana, mismas intensidades hasta el final del día</dd></div>
-      <div><dt>Estado del mar</dt><dd>Hs 0,7-0,9 m durante todo el día (Windfinder) → rango dársena (0,5-1,25 m)</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>Aviso especial visible en cabecera AEMET municipio Valencia: 'Chubascos muy fuertes y persistentes'. Probabilidad de lluvia 100% en las franjas de hoy. No se pudo determinar color (amarillo/naranja) ni hora exacta de inicio/fin en el texto extraído de la tabla de avisos — se recomienda verificación manual antes de publicar. Sin alerta de calor (máx prevista 24°C)</dd></div>
-      <div><dt>Precipitación observada</dt><dd>Windfinder reporta condición actual 'Lluvia' con precipitación de 0,6 a 2,3 mm/3h distribuida a lo largo de todo el día de hoy</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora), Windfinder Marina Valencia (viento + olas), AEMET municipio Valencia (temperatura + aviso especial)</dd></div>
-      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió el detalle de la predicción textual para la zona (solo estructura genérica de la página, sin texto de boletín); Windguru no se consulta por ser JavaScript</dd></div>
+      <div><dt>Viento AM (00-09h)</dt><dd>Gregal (NE/NNE/ENE), 10-16 kts aprox. según Tablademareas (18-30 km/h); Windfinder lo sitúa algo más bajo, 10-13 kts</dd></div>
+      <div><dt>Viento PM (14-19h)</dt><dd>Levante/Gregal (ENE/NE), 11-14 kts (Tablademareas 22-26 km/h; Windfinder 10-12 kts)</dd></div>
+      <div><dt>Estado del mar</dt><dd>Hs 0.7-0.9 m todo el día (Windfinder) → rango dársena, pero irrelevante por la alerta de lluvia</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>AEMET municipio Valencia muestra banner 'Aviso especial. Chubascos muy fuertes y persistentes.' Probabilidad de lluvia 100% en las franjas 12-18h y 18-24h de hoy; Windfinder confirma 'Lluvia' como tiempo actual y precipitación constante en todas las franjas horarias del día (0.6-2.3 mm/3h). No se pudo confirmar el color exacto (amarillo/naranja/rojo) porque la tabla detallada de avisos no cargó el contenido, pero el lenguaje empleado ('aviso especial', 'chubascos muy fuertes y persistentes') y la probabilidad del 100% sugieren un nivel significativo (naranja o superior). Se aplica criterio conservador de suspensión total del día al no identificarse una franja matinal claramente libre de riesgo</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, OK), Windfinder Marina Valencia (viento, olas y tiempo, OK), AEMET municipio Valencia (banner de aviso especial visible, OK parcial)</dd></div>
+      <div><dt>Sin acceso</dt><dd>Windguru La Patacona no se intenta (JavaScript); AEMET marítima val1 no devolvió predicción textual específica para la zona Valencia-Murcia; detalle de nivel/color exacto del aviso (tabla 'Warnings. Litoral norte de Valencia') no accesible en el contenido extraído</dd></div>
     </dl>
   </div>
 
