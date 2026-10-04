@@ -237,23 +237,23 @@
     <div class="status-flag" style="background:var(--coral)"></div>
     <div>
       <div class="status-word" style="color:var(--coral)">PARCIAL</div>
-      <div class="status-sub">Ponent flojo por la mañana; aviso especial de AEMET por lluvias/tormentas fuertes → se suspende la actividad desde las 14:00h</div>
+      <div class="status-sub">Tramuntana suave AM + Llevant moderado desde mediodía — PARCIAL: aviso especial de tormentas/lluvias fuertes, suspensión preventiva desde las 14h</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL domingo 4 de octubre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL domingo 4 de octubre de 2026
 
 Buenas días!
 
-Tramuntana flojo a primera hora, rolando a Ponent flojo a media mañana; Llevant moderado a partir de mediodía.
+Tramuntana suave a primera hora; Llevant moderado a partir de mediodía.
 
 Entrenamiento en el agua durante la mañana.
 
-⚠️ La AEMET activa un AVISO ESPECIAL por CHUBASCOS Y TORMENTAS muy fuertes y persistentes, con probabilidad de precipitación del 90-100% a partir de mediodía en el litoral norte de Valencia ⚠️
+⚠️ La AEMET activa un AVISO ESPECIAL por CHUBASCOS Y TORMENTAS muy fuertes y persistentes, con probabilidad de lluvia muy alta a partir de mediodía ⚠️
 
-Siguiendo las recomendaciones del Centro de Coordinación de Emergencias de la Generalitat Valenciana, se suspende toda actividad al aire libre a partir de las 14:00h.
+Siguiendo las recomendaciones del Centro de Coordinación de Emergencias de la Generalitat Valenciana ante fenómenos meteorológicos adversos, se suspende toda actividad al aire libre a partir de las 14:00h.
 
 Las clases de la tarde dentro de ese horario no contarán como realizadas y os podréis apuntar en otros horarios durante el mes.
 
@@ -266,12 +266,12 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM (0-9h)</dt><dd>Tablademareas: 0-4h N/NNE 15-20 km/h (8-11 kts, Tramuntana); 5-9h NNW/WNW 6-12 km/h (3-6 kts, flojo, girando a Ponent). Windfinder: 2h 9kts, 5h 6kts, 8h 5kts, descendiendo</dd></div>
-      <div><dt>Viento mediodía/PM (12-17h)</dt><dd>Tablademareas: ENE 5-19 km/h (3-10 kts) creciendo hacia 14-17h (Llevant, moderado); Windfinder 11h 2kts, 14h 7kts, 17h 9kts, consistente con ENE</dd></div>
-      <div><dt>Estado del mar</dt><dd>Windfinder Marina Valencia: Hs 0.5-0.6 m durante todo el día, oleaje residual bajo, periodo 5-6s (no hay dato directo de boya Valencia)</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>AEMET municipio Valencia muestra 'Aviso especial. Chubascos y tormentas muy fuertes y persistentes' para hoy. Probabilidad de precipitación: 90% (bloque 12-18h) y 100% (bloque 18-24h) en Valencia capital. Zona de aviso: Litoral norte de Valencia (774602). No se pudo extraer el color exacto (amarillo/naranja/rojo) ni la hora oficial de inicio del aviso en el scraping; se aplica criterio conservador (equivalente a naranja lluvia + amarilla tormenta) y la regla preventiva de la Generalitat (suspensión desde las 14:00h)</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, OK); Windfinder Marina Valencia (viento + olas, OK); AEMET municipio Valencia (aviso especial visible pero sin detalle de color/hora exacta); AEMET marítima val1 (cargó pero sin datos específicos del área Valencia, requiere selección interactiva)</dd></div>
-      <div><dt>Sin acceso</dt><dd>Windguru La Patacona (JavaScript, no carga); AEMET marítima val1 no ofreció predicción textual específica para la costa de Valencia en esta consulta; nivel exacto (color) del aviso de AEMET para litoral norte de Valencia no visible en el HTML extraído</dd></div>
+      <div><dt>Viento AM (00-09h)</dt><dd>Tablademareas: NE/NNE/N 15-20 km/h (8-11kt) en primeras horas → Tramuntana suave; decae a NNW/WNW flojo (<5kt) hacia 07-11h</dd></div>
+      <div><dt>Viento PM (12h+)</dt><dd>Tablademareas: entra ENE/E desde 12h, subiendo de 5 a 19 km/h (~10kt) hacia 16-17h → Llevant moderado. Windfinder confirma giro a Este-Nordeste con 7-9 kt por la tarde</dd></div>
+      <div><dt>Estado del mar</dt><dd>Windfinder: Hs 0.5-0.6 m durante todo el día (dársena por oleaje, pero prevalece alerta de fenómeno adverso)</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>AEMET municipio Valencia muestra 'Aviso especial: Chubascos y tormentas muy fuertes y persistentes'; probabilidad de lluvia 90% (12-18h) y 100% (18-24h) del domingo. No se pudo confirmar el color exacto (amarillo/naranja) del detalle de avisos del litoral norte en el texto extraído; se aplica criterio conservador (similar a precedente 16/09/2026) y se fija suspensión preventiva desde las 14h</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, OK), Windfinder Marina Valencia (viento+olas, OK), AEMET municipio Valencia (aviso especial detectado, OK parcial)</dd></div>
+      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió predicción textual para la zona Costa de Valencia y Murcia; tampoco se pudo abrir el detalle completo de la tabla de avisos (colores por fenómeno) del litoral norte de Valencia — Windguru no se intenta por ser JavaScript</dd></div>
     </dl>
   </div>
 
