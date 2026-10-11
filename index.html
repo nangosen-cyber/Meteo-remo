@@ -237,17 +237,17 @@
     <div class="status-flag" style="background:var(--green)"></div>
     <div>
       <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Ponent flojo a primera hora → Garbí moderado a partir de la tarde</div>
+      <div class="status-sub">Ponent flojo a primera hora → Garbí entrando a mediodía, moderado a última hora de la tarde</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL domingo 11 de octubre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEREOLÓGICA DEL domingo 11 de octubre de 2026
 
 Buenas días!
 
-Ponent flojo durante la mañana; Garbí moderado a partir de la tarde, hasta el final de la jornada.
+Ponent flojo a primera hora; Garbí entrando a partir de mediodía (rotando S/SE/ESE) y subiendo a moderado a última hora de la tarde.
 
 Entrenamiento en el agua.
 
@@ -260,14 +260,13 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM</dt><dd>WNW/W/WSW, 8-10 km/h (≈4-5 kts) entre 00h y 11h → Ponent flojo</dd></div>
-      <div><dt>Viento mediodía</dt><dd>SW/S muy flojo (7-8 km/h, ≈4 kts) 12h-13h, transición</dd></div>
-      <div><dt>Viento PM</dt><dd>SSE/SE/ESE 12-19 km/h (≈6.5-10.3 kts) entre 14h y 18h → Garbí moderado; rota a ENE/NE/NNE por la noche (19h-23h)</dd></div>
-      <div><dt>Estado del mar</dt><dd>Hs 0.1-0.3 m todo el día (Windfinder) → condiciones de agua</dd></div>
-      <div><dt>Temperatura</dt><dd>Máxima prevista 26°C (AEMET), sin alerta de calor</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>No se detecta ningún aviso activo (amarillo/naranja/rojo) para litoral norte de Valencia; probabilidad de lluvia 0% hoy</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora), Windfinder Marina Valencia (viento+olas), AEMET municipio Valencia (temperatura+alertas)</dd></div>
-      <div><dt>Sin acceso</dt><dd>Windguru no carga (JavaScript); AEMET marítima val1 no devolvió predicción textual específica del día, solo estructura de navegación</dd></div>
+      <div><dt>Viento AM (00-09h)</dt><dd>Tablademareas: WNW/W/WSW 8-10 km/h (~4-5 kts) → Ponent flojo</dd></div>
+      <div><dt>Viento mediodía/tarde</dt><dd>Tablademareas: rotación SW(12h)→S(13h)→SSE(14h)→SE(15h)→ESE(16-18h), 7-19 km/h (~4-10.3 kts); máximo ESE 19 km/h (~10.3 kts) a las 17h → Garbí flojo subiendo a moderado al final de la tarde. Windfinder confirma 'Sudeste' como dirección actual (5 kts) y 11 kts a las 17h</dd></div>
+      <div><dt>Viento noche (fuera de horario)</dt><dd>Tablademareas: rotación a NE/NNE 13-20 km/h (~7-10.8 kts) desde 19h en adelante, no afecta al entrenamiento matutino</dd></div>
+      <div><dt>Estado del mar</dt><dd>Windfinder: Hs 0.2-0.3 m durante todo el día → condiciones de agua (sin oleaje reseñable)</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>Sin alertas activas detectadas para litoral norte de Valencia; probabilidad de lluvia 0%, temp máx 26°C (sin umbral de calor ni fenómeno adverso)</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (OK), Windfinder Marina Valencia (OK), AEMET municipio Valencia (OK, sin avisos visibles en tabla de Warnings)</dd></div>
+      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió predicción específica de la zona Valencia-Murcia, solo página de selección genérica</dd></div>
     </dl>
   </div>
 
