@@ -230,28 +230,34 @@
   <h1>PARTE DE<br>LA DÁRSENA</h1>
   <div class="fecha-wrap">
     <span class="fecha-label">Datos de</span>
-    <p class="fecha">Viernes, 16 de octubre de 2026</p>
+    <p class="fecha">Sábado, 17 de octubre de 2026</p>
   </div>
 
   <div class="status-card">
-    <div class="status-flag" style="background:var(--green)"></div>
+    <div class="status-flag" style="background:var(--coral)"></div>
     <div>
-      <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Ponent flojo a primera hora → Garbí suave desde mediodía</div>
+      <div class="status-word" style="color:var(--coral)">PARCIAL</div>
+      <div class="status-sub">Mistral flojo a primera hora + Llevant flojo desde mediodía; aviso especial de lluvias/tormentas obliga a suspender por la tarde (desde las 14:00)</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL viernes 16 de octubre de 2026
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL sábado 17 de octubre
 
 Buenas días!
 
-Ponent flojo a primera hora; Garbí suave a partir de mediodía, hasta el final de la jornada.
+Mistral flojo a primera hora; Llevant flojo a partir de mediodía.
 
-Entrenamiento en el agua.
+Entrenamiento en el agua durante la mañana.
 
-No os olvideis traer algún tipo de protección solar y agua a los entrenamientos.
+⚠️ La AEMET activa un aviso especial por LLUVIAS y TORMENTAS muy fuertes y persistentes, con probabilidad de precipitación en aumento claro desde el mediodía ⚠️
+
+Siguiendo las recomendaciones del Centro de Coordinación de Emergencias de la Generalitat Valenciana, se suspende toda actividad al aire libre a partir de las 14:00.
+
+Las clases de la tarde dentro de ese horario no contarán como realizadas y os podréis apuntar en otros horarios durante el mes.
+
+No os olvideis traer algún tipo de protección solar y agua a los entrenamientos de la mañana.
 
 Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodbuster)</p>
     <button class="copy-btn" onclick="copyBulletin(this)">Copiar texto</button>
@@ -260,12 +266,12 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM</dt><dd>00h-09h predominante W/WNW/NW (Ponent) entre 1-5 kt (Tablademareas), confirmado por Windfinder 2-3 kt de madrugada → flojo</dd></div>
-      <div><dt>Viento PM</dt><dd>Desde 13h entra SE/ESE (Garbí): 12-16 km/h (≈6.5-8.6 kt) según Tablademareas; Windfinder 6-7 kt a las 14-17h. Se mantiene estable sin caída ≥40% entre 17h-20h → suave, hasta el final de la jornada</dd></div>
-      <div><dt>Estado del mar</dt><dd>Hs 0.2-0.4 m todo el día (Windfinder) → agua</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>Sin alertas activas detectadas para hoy. Temp máx prevista 27°C (muy por debajo del umbral amarillo 36°C). No se observan avisos de lluvia, tormenta, viento o costeros en el apartado de litoral norte de Valencia para el 16/10</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, OK), Windfinder Marina Valencia (viento + olas, OK), AEMET municipio Valencia (temperatura + avisos, OK)</dd></div>
-      <div><dt>Sin acceso</dt><dd>Windguru La Patacona no carga (JavaScript). AEMET marítima val1 cargó la página pero sin predicción textual concreta para hoy, solo el formulario de selección de zona</dd></div>
+      <div><dt>Viento AM (00-09h)</dt><dd>NNW/NW/WNW mezcla (Mistral) 4-7 km/h ≈ 2-4 kt, flojo — fuente Tablademareas</dd></div>
+      <div><dt>Viento mediodía-tarde</dt><dd>N→NE→ENE→E (Llevant) 6-14 km/h ≈ 3-7.5 kt hasta 16h, virando a ESE/SE (Garbí) 9-14 km/h desde 17h — fuente Tablademareas</dd></div>
+      <div><dt>Estado del mar (Hs)</dt><dd>0.1-0.3 m todo el día, sin apenas oleaje (Windfinder) — compatible con agua en cuanto a mar, pero no determina la decisión hoy</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>AEMET municipio Valencia (zona Litoral norte, 774602) muestra 'Aviso especial. Chubascos y tormentas muy fuertes y persistentes'. Probabilidad de lluvia: 10% (06-12h), 70% (12-18h), 100% (18-24h) hoy. El texto parseado NO especifica color exacto (amarillo/naranja) ni hora oficial de inicio del aviso. Se aplica criterio conservador de la sección 6b (naranja lluvias + amarilla tormentas → suspensión Generalitat desde las 14:00), siguiendo el patrón del 16/09/2026. RECOMENDADO QUE NANDO VERIFIQUE EL NIVEL EXACTO Y HORA EN AEMET/112CV.</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (OK, viento hora a hora), Windfinder Marina Valencia (OK, viento+olas), AEMET municipio Valencia (OK pero sin detalle de nivel/hora del aviso especial), AEMET marítima val1 (sin datos específicos de zona cargados)</dd></div>
+      <div><dt>Sin acceso</dt><dd>Windguru La Patacona no se consulta (requiere JavaScript); AEMET marítima val1 solo mostró la página de selección de área, sin texto de predicción específico para la costa de Valencia</dd></div>
     </dl>
   </div>
 
