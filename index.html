@@ -236,38 +236,40 @@
   <div class="status-card">
     <div class="status-flag" style="background:var(--coral)"></div>
     <div>
-      <div class="status-word" style="color:var(--coral)">SUSPENDIDO</div>
-      <div class="status-sub">Tramuntana temporal (rachas >50 km/h) + aviso especial de tormentas y oleaje >2,5m → se suspende el entrenamiento</div>
+      <div class="status-word" style="color:var(--coral)">TIERRA</div>
+      <div class="status-sub">Tramuntana fuerte de madrugada + oleaje >2m todo el día + aviso de tormentas → Entrenamiento en tierra</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL lunes 19 de octubre de 2026
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL lunes 19 de octubre
 
 Buenas días!
 
-⚠️ La AEMET activa un AVISO ESPECIAL por CHUBASCOS Y TORMENTAS MUY FUERTES Y PERSISTENTES en el litoral norte de Valencia, coincidiendo con viento de Tramuntana muy fuerte (rachas superiores a 50 km/h durante la madrugada y primera hora de la mañana) y un oleaje elevado (Hs superior a 2,5 m) ⚠️
+Tramuntana fuerte durante la madrugada y primera hora (rachas fuertes, hasta 25-30 kts); a partir de media mañana afloja a Poniente/Mistral flojo, pero el mar se mantiene movido con oleaje superior a los 2 metros durante toda la mañana y el mediodía.
 
-Debido a estas condiciones meteorológicas adversas, que afectan directamente a la franja en la que entrenamos, nos vemos obligados a suspender el entrenamiento en el agua. El viento y el oleaje se mantienen por encima de los límites de seguridad durante toda la mañana, y el oleaje seguirá siendo elevado buena parte de la tarde.
+⚠️ La AEMET mantiene un aviso especial por CHUBASCOS Y TORMENTAS fuertes y persistentes, con probabilidad alta de lluvia a partir de mediodía ⚠️
 
-Las clases dentro de ese horario no contarán como realizadas y os podréis apuntar en otros horarios durante el mes.
+Debido al fuerte oleaje y a la inestabilidad anunciada, hoy el entrenamiento se realizará en tierra.
 
-Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodbuster)
+No os olvideis traer algún tipo de protección para la lluvia y ropa de abrigo a los entrenamientos.
 
-Gracias!</p>
+Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodbuster)</p>
     <button class="copy-btn" onclick="copyBulletin(this)">Copiar texto</button>
   </div>
 
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento madrugada/mañana (Tablademareas)</dt><dd>00-06h N/NNE 35-50 km/h (19-27 kts); rachas Windfinder hasta 30 kts (05h, gust); 07-10h N/NNE bajando de 40 a 21 km/h</dd></div>
-      <div><dt>Viento mediodía/tarde (Tablademareas)</dt><dd>11-14h NNW/NW flojo 8-10 km/h; 15-16h WNW/W flojo 5-10 km/h; 17-23h SSW/S/SW/WSW flojo 3-12 km/h</dd></div>
-      <div><dt>Estado del mar (Windfinder, Hs)</dt><dd>02h 3,0 m; 05h 2,7 m; 08h 2,5 m; 11h 2,6 m; 14h 2,2 m; 17h 1,8 m; 20h 1,4 m; 23h 1,1 m — oleaje de categoría 'tierra' (>1,25 m) durante prácticamente todo el día</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>Aviso especial en AEMET municipio Valencia: 'Chubascos y tormentas muy fuertes y persistentes', litoral norte de Valencia (774602). Probabilidad de lluvia 100% en el tramo 06-12h y 60% en 12-18h de hoy. No se pudo confirmar el nivel exacto (amarillo/naranja) en el texto extraído, pero el término 'aviso especial' junto con viento temporal y oleaje >2,5m justifica criterio conservador de suspensión</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, OK), Windfinder Marina Valencia (viento+olas, OK), AEMET municipio Valencia (aviso especial detectado, tabla detallada de avisos no accesible por completo)</dd></div>
-      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió predicción textual específica (selector dinámico JS); Windguru La Patacona no se intenta (requiere JavaScript)</dd></div>
+      <div><dt>Viento AM (00-09h)</dt><dd>Tramuntana N/NNE fuerte: Tablademareas 35-50 km/h (≈19-27 kts); Windfinder 18-25 kts sostenido, rachas 27-30 kts de madrugada. Afloja a partir de las 10-11h a NNW/NW (Mistral/Poniente) flojo, ~8-10 km/h</dd></div>
+      <div><dt>Viento PM (12-23h)</dt><dd>Poniente/Llebeig flojo y variable, <15 km/h (Windfinder 1-6 kts), girando a SSW/S/SW al final del día</dd></div>
+      <div><dt>Estado del mar (Hs, Windfinder)</dt><dd>02h 3.0m · 05h 2.7m · 08h 2.5m · 11h 2.6m · 14h 2.2m · 17h 1.8m · 20h 1.4m · 23h 1.1m — por encima del umbral de 1.25m (tierra) durante casi toda la jornada de entrenamiento</dd></div>
+      <div><dt>Precipitación</dt><dd>Probabilidad de lluvia 60% en la franja 12-18h (AEMET); lluvia registrada en Windfinder de madrugada (6-14 mm/3h)</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>Aviso especial activo: 'Chubascos y tormentas muy fuertes y persistentes' (cabecera AEMET municipio Valencia). No se pudo confirmar el nivel de color exacto (amarillo/naranja) para la zona Litoral norte de Valencia</dd></div>
+      <div><dt>Temperatura</dt><dd>Máx 19°C / Mín 14°C — sin alerta de calor</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, ok), Windfinder Marina Valencia (viento + olas, ok), AEMET municipio Valencia (ok, parcial)</dd></div>
+      <div><dt>Sin acceso</dt><dd>No se pudo expandir la tabla detallada de avisos 'Litoral norte de Valencia' (nivel exacto de color/fenómeno); AEMET marítima val1 no devolvió predicción específica de texto para el área val1; Windguru no consultado (requiere JavaScript)</dd></div>
     </dl>
   </div>
 
