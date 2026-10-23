@@ -237,17 +237,17 @@
     <div class="status-flag" style="background:var(--green)"></div>
     <div>
       <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Llebeig moderado a primera hora → Garbí moderado a fuerte desde la tarde (baja a última hora)</div>
+      <div class="status-sub">Llebeig moderado a primera hora → Garbí moderado desde la tarde, bajando de intensidad al final del día</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL viernes 23 de octubre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL viernes 23 de octubre de 2026
 
 Buenas días!
 
-Llebeig moderado a primera hora; Garbí moderado a fuerte a partir de la tarde, y que bajará de intensidad a última hora de la tarde.
+Llebeig moderado a primera hora; Garbí moderado a partir de la tarde, y que bajará de intensidad a última hora de la tarde.
 
 Entrenamiento en el agua.
 
@@ -260,13 +260,12 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM (00-09h)</dt><dd>Predominio WSW (Llebeig), de 6 kt a primeras horas subiendo a 11-15 kt hacia las 7-9h</dd></div>
-      <div><dt>Viento mediodía (10-14h)</dt><dd>Transición W/NW/N, débil (8-12 kt), lull hacia las 14h (~4-8 kt)</dd></div>
-      <div><dt>Viento PM (15-20h)</dt><dd>Giro a ENE/ESE/SE (Garbí), 9-14 kt, pico ~14 kt hacia las 16h; cae a 10-7 kt entre 17h y 20h (~40% de caída)</dd></div>
-      <div><dt>Estado del mar (Hs, Windfinder)</dt><dd>0.1-0.5 m durante todo el día → condición de agua</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>Sin avisos activos en litoral norte de Valencia (774602); temp. máx. prevista 25°C; probabilidad de lluvia 0% hoy</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora), Windfinder Marina Valencia (viento + Hs), AEMET municipio Valencia (temperatura/alertas)</dd></div>
-      <div><dt>Sin acceso</dt><dd>Windguru La Patacona (JavaScript, no carga); AEMET marítima val1 (página cargó solo menú, sin contenido de predicción textual útil)</dd></div>
+      <div><dt>Viento AM (00-13h)</dt><dd>Predomina WSW (Llebeig), de 6-9 kts a primera hora subiendo a 11-15 kts hacia las 6-9h; hacia las 10-13h rola a W/WNW/NW (Ponent) con 9-13 kts</dd></div>
+      <div><dt>Viento PM (14-23h)</dt><dd>Giro a ESE/SE (Garbí) desde ~16h, 11-14 kts (pico 14 kts a las 16h); cae a 6-7 kts hacia las 20-21h (~40% de bajada); al anochecer gira a SSE (Migjorn) suave</dd></div>
+      <div><dt>Estado del mar</dt><dd>Hs entre 0.1 y 0.6 m durante todo el día (Windfinder) → criterio agua (Hs<0.5m la mayor parte del día)</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>Sin alertas activas en litoral norte de Valencia; temp. máx. prevista 25°C (sin riesgo de calor); no se detectan avisos de lluvia, tormenta, viento ni costeros en las páginas consultadas</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, principal al fallar Windguru), Windfinder Marina Valencia (viento+olas), AEMET municipio Valencia (alertas+temperatura), AEMET marítima val1 (consultada)</dd></div>
+      <div><dt>Sin acceso</dt><dd>Windguru no cargó (JavaScript); AEMET marítima val1 devolvió solo la plantilla de navegación sin predicción textual específica para hoy</dd></div>
     </dl>
   </div>
 
