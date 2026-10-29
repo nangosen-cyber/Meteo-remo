@@ -230,24 +230,24 @@
   <h1>PARTE DE<br>LA DÁRSENA</h1>
   <div class="fecha-wrap">
     <span class="fecha-label">Datos de</span>
-    <p class="fecha">Miércoles, 28 de octubre de 2026</p>
+    <p class="fecha">Jueves, 29 de octubre de 2026</p>
   </div>
 
   <div class="status-card">
     <div class="status-flag" style="background:var(--green)"></div>
     <div>
       <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Tramuntana suave a primera hora → Garbí flojo desde mitad mañana</div>
+      <div class="status-sub">Ponent flojo a primera hora → Garbí suave desde mediodía, mar en calma</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL miércoles 28 de octubre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEREOLÓGICA DEL jueves 29 de octubre
 
 Buenas días!
 
-Tramuntana suave a primera hora; Garbí flojo a partir de mitad mañana, hasta el final de la jornada.
+Ponent flojo a primera hora; Garbí suave a partir de mediodía, hasta el final de la jornada.
 
 Entrenamiento en el agua.
 
@@ -260,12 +260,13 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM</dt><dd>N/NNE predominante 00h-09h, 10-15 km/h (~6-8 kts) → Tramuntana suave</dd></div>
-      <div><dt>Viento PM</dt><dd>E/ESE/SE desde las 11h, 8-13 km/h (~4-7 kts) → Garbí flojo; rota a SSE/SW flojo a última hora</dd></div>
-      <div><dt>Estado del mar</dt><dd>Hs 0.3 m todo el día (Windfinder) → condición de agua</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>Sin avisos activos visibles para litoral norte de Valencia (calor, lluvia, tormenta, viento o costero); probabilidad de lluvia 50% en la mañana sin aviso asociado; temp. máx. prevista 24°C</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora), Windfinder Marina Valencia (Hs y viento en kts), AEMET municipio Valencia (temperaturas y avisos litoral norte 774602)</dd></div>
-      <div><dt>Sin acceso</dt><dd>Windguru La Patacona no carga (JavaScript); AEMET marítima val1 no mostró texto de predicción específico, solo menú de navegación</dd></div>
+      <div><dt>Viento AM (00-10h)</dt><dd>W/WNW/WSW (Ponent) 7-10 km/h ≈ 4-5 kts, flojo (Tablademareas)</dd></div>
+      <div><dt>Viento mediodía-tarde (12-18h)</dt><dd>SSE/SE/ESE girando a E (Garbí → Levante) 7-14 km/h ≈ 4-7.6 kts, suave (Tablademareas); Windfinder confirma componente SE suave (5-7 kts) y mar en calma</dd></div>
+      <div><dt>Estado del mar</dt><dd>Hs 0.3-0.4 m todo el día (Windfinder) → categoría agua</dd></div>
+      <div><dt>Temperatura máxima</dt><dd>25°C (AEMET municipio Valencia), sin alerta de calor</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>Sin alertas activas naranja/roja detectadas (litoral norte 774602). Probabilidad de lluvia hoy 0%. No se aprecian avisos de lluvia, tormenta, viento ni costeros en la tabla de 'Warnings' extraída</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, fuente principal), Windfinder Marina Valencia (viento + olas, apoyo), AEMET municipio Valencia (temperatura y alertas litoral norte)</dd></div>
+      <div><dt>Sin acceso</dt><dd>AEMET marítima val1: la página cargó pero no devolvió predicción textual concreta ni tabla de avisos específica para esta jornada; Windguru no se intenta (JavaScript)</dd></div>
     </dl>
   </div>
 
