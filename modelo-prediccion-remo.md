@@ -179,11 +179,32 @@ No os olvideis traer algún tipo de protección solar y agua a los entrenamiento
 Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodbuster)
 ```
 
+### Día con alerta AMARILLA activa que NO suspende nada (entrenamiento normal, pero hay que avisar)
+⚠️ **Añadido el 31/10/2026, a partir de un boletín real del club**: una alerta amarilla por lluvia/tormenta, sin que haya suspensión, se menciona igualmente al principio del boletín (justo después del saludo, antes del viento), con su hora de fin si AEMET la da. `decision` sigue siendo `AGUA`/`DARSENA`/`TIERRA` según corresponda (NO es "PARCIAL": aquí no se suspende nada, solo se avisa).
+
+Ejemplo real (31/10/2026):
+```
+PREVISIÓN METEOROLÓGICA DEL [día] [fecha]
+
+Buenos días!
+
+⚠️ La AEMET mantiene activa la ALERTA AMARILLA por [FENÓMENO 1] y por [FENÓMENO 2] hasta las [hora fin] horas del día de hoy ⚠️
+
+[Nombre viento local] [intensidad] con rachas de mayor intensidad a [momento]. [Frase de precaución si AEMET la menciona, ej. "Posibilidad de chubascos irregulares y tormenta eléctrica."] Atención a notificaciones puntuales!
+
+Entrenamiento en el agua.
+
+No olvidéis traer ropa adecuada, algún tipo de protección solar y agua a los entrenamientos.
+
+Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodbuster)
+```
+Nota de estilo: en este ejemplo real el club usó "Buenos días!" (no "Buenas días!") y añadió "ropa adecuada" a la recomendación de equipo — variación natural, no es necesario forzar siempre la misma redacción exacta mientras se mantenga el tono y el orden de bloques.
+
 ### Reglas de estilo
 - Separar viento de primera hora y evolución con **punto y coma (;)**
 - Usar siempre nombres locales de viento (nunca grados ni "componente")
 - Máximo 2-4 emojis, solo donde aporten
-- Alerta amarilla: omitir del WhatsApp si no afecta directamente al litoral norte
+- Alerta amarilla **por calor**: omitir del WhatsApp si no afecta directamente al litoral norte. Alerta amarilla **por cualquier otro fenómeno (lluvia, tormenta, viento...)**: SIEMPRE mencionarla, con su hora de fin si AEMET la da (confirmado el 31/10/2026 con un boletín real del club que sí la incluía)
 - Alerta naranja/roja: siempre con todos los detalles
 
 ---
@@ -212,6 +233,7 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
 | 29/07/2026 | Sin alerta relevante | Agua — Mistral suave + Garbí moderado (desde mitad mañana, hasta final jornada) | Agua | ✅ | NNW dominante = Mistral; 11-12 kts Garbí = "moderado" (no "moderado a fuerte") |
 | 14/09/2026 | Sin alerta | Agua — Poniente flojo + Garbí moderado (desde mediodía, baja intensidad última tarde) | Agua | ✅ | "Flojo" para <5 kts (vs "suave"); el club matiza bajada de intensidad al final si Windfinder la muestra (≥40% de caída 17h-20h) |
 | 16/09/2026 | Naranja lluvia + amarilla tormenta (desde 16h) | Suspensión desde las 14h (criterio Generalitat) | Agua (❌ no detectó la alerta) | ❌ | Corregido a mano por Nando. El sistema solo miraba alertas de calor/marítima/viento — nunca lluvia/tormenta. Ver sección 6b. |
+| 31/10/2026 | Amarilla lluvia + amarilla tormenta hasta 17:59h | Agua — se menciona la alerta amarilla (sin suspensión) + Gregal moderado a fuerte, rachas más fuertes a mediodía | Agua, sin mencionar ninguna alerta; viento descrito como Gregal suave → Llevant moderado | ❌ (decisión agua correcta, pero boletín incompleto e impreciso) | Dos fallos a la vez: (1) el aviso vivía en atributos `title=`/`aria-label=` de AEMET y el limpiador de HTML los perdía al quitar etiquetas — corregido en `generar-parte.mjs`. (2) La regla "alerta amarilla se omite" solo valía para calor, no para lluvia/tormenta — aclarado en sección 6/7. |
 
 ---
 
@@ -222,14 +244,16 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
 3. **NNW predominante = Mistral**, no Tramuntana ni Poniente.
 4. **ESE = Garbí**, no Levante. Levante es solo E/ENE puro.
 5. **"Moderado a fuerte" para Garbí** solo a partir de ~13 kts; con 11-12 kts usar solo "moderado".
-6. **Alerta amarilla por calor:** omitir del WhatsApp si no afecta directamente al litoral norte.
+6. **Alerta amarilla por calor:** omitir del WhatsApp si no afecta directamente al litoral norte. ⚠️ Esta regla es SOLO para calor. Confirmado el 31/10/2026: una alerta amarilla por lluvia y tormenta SÍ se menciona siempre en el boletín real del club (con su hora de fin), aunque sea de nivel amarillo y no implique suspensión. No generalizar "omitir amarilla" a otros fenómenos.
 7. **Evolución del Garbí al final del día:** si Windfinder muestra caída ≥40% entre 17h-20h, añadir "bajará de intensidad a última hora de la tarde" en lugar de "hasta el final de la jornada".
 8. **Timing "mitad mañana":** entrada del viento secundario a las ~10-11h.
 9. **Windguru no carga con web_fetch** (JavaScript). Usar tablademareas + Windfinder como sustitutos habituales.
 10. **AEMET litoral norte Valencia = código 774602.** Verificar siempre en aemet.es/en/eltiempo/prediccion/municipios/valencia-id46250 (campo "Warnings. Litoral norte de Valencia").
 11. **No solo alertas de calor.** El 16/09/2026 hubo alerta naranja de lluvia + amarilla de tormenta que el sistema no vio porque solo comprobaba temperatura. Revisar SIEMPRE cualquier tipo de alerta activa en AEMET (lluvia, tormenta, viento, costera, nieve...), no solo calor. Ver regla 6b.
 12. **Criterio de la Generalitat puede ser más estricto y más preventivo que el de AEMET.** Una combinación de alertas (ej. naranja lluvia + amarilla tormenta) puede implicar suspensión desde una hora *anterior* a la que indica el propio aviso de AEMET, según la Guía de recomendaciones a los ayuntamientos del Centro de Coordinación de Emergencias de la Generalitat Valenciana.
+13. **Los avisos de AEMET en la página de municipio viven en atributos `title=`/`aria-label=` de iconos, no en texto visible.** Un extractor de texto que solo quita etiquetas HTML sin rescatar esos atributos antes pierde los avisos por completo (fallo real el 31/10/2026). Corregido en `scripts/generar-parte.mjs` sustituyendo la etiqueta entera `<...title="X"...>` por `[X]`, no solo el atributo (si se deja el texto rescatado dentro de los `< >` originales, el limpiador de etiquetas se lo sigue comiendo).
+14. **Alerta amarilla "se omite" es una regla que solo aplica al calor.** Para lluvia, tormenta u otros fenómenos, el club SÍ menciona siempre la alerta amarilla activa, con su hora de fin. Confirmado el 31/10/2026.
 
 ---
 
-*Última actualización: 14 de septiembre de 2026*
+*Última actualización: 31 de octubre de 2026*

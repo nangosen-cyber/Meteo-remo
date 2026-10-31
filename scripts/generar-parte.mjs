@@ -35,6 +35,15 @@ async function fetchTexto(url) {
     const texto = html
       .replace(/<script[\s\S]*?<\/script>/gi, ' ')
       .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+      // Páginas como AEMET muestran avisos como iconos con el texto solo en
+      // title="..."/aria-label="..." (ej. title="Low - Rainfalls"): hay que
+      // sustituir la ETIQUETA ENTERA (no solo el atributo), si no el texto
+      // rescatado queda igualmente "dentro" de los < > y el strip de abajo
+      // se lo come igual (fallo real detectado el 31/10/2026: una alerta
+      // amarilla por lluvia y tormenta no se vio porque solo vivía en estos
+      // atributos y el primer intento de arreglo no sacaba el texto de
+      // dentro de la propia etiqueta).
+      .replace(/<[^>]*\s(?:title|aria-label)="([^"]*)"[^>]*>/gi, ' [$1] ')
       .replace(/<[^>]+>/g, ' ')
       .replace(/&nbsp;/g, ' ')
       .replace(/\s+/g, ' ')
@@ -82,6 +91,8 @@ ${bloqueFuentes}
 IMPORTANTE: revisa las páginas de AEMET buscando CUALQUIER tipo de alerta activa (calor, lluvia, tormenta, viento, costera, nieve...), no solo temperatura — el 16/09/2026 el sistema falló precisamente por mirar solo alertas de calor y no detectar una alerta naranja de lluvia + amarilla de tormenta. Aplica la lógica de decisión del modelo en este orden: alerta de calor > alerta de lluvia/tormenta/otro fenómeno (sección 6b del modelo) > alerta marítima > alerta de viento > criterio fino agua/dársena/tierra. Ante cualquier alerta naranja o roja de cualquier tipo que no sepas encajar en las reglas exactas, menciónala igualmente en "datos_usados" y aplica el criterio más conservador (tendiendo a SUSPENDIDO o PARCIAL) antes que ignorarla.
 
 MUY IMPORTANTE — SUSPENDIDO vs PARCIAL (añadido el 16/09/2026, corrección de un fallo real): si la suspensión/alerta empieza a una hora concreta (ej. "desde las 14h") y la franja anterior del día no tiene ningún problema, usa "PARCIAL", NUNCA "SUSPENDIDO". Con "PARCIAL" el boletín empieza igual que un día normal (datos de viento/mar de la mañana, "Entrenamiento en el agua durante la mañana") y AÑADE la alerta como excepción para la tarde, usando la plantilla "Día con alerta que solo afecta a PARTE de la jornada" del modelo (sección 7). Reserva "SUSPENDIDO" (todo el boletín es el aviso de cancelación, sin datos de viento) solo para cuando la suspensión aplica desde primera hora o todo el día entero.
+
+MUY IMPORTANTE — alerta amarilla SIN suspensión (añadido el 31/10/2026, corrección de un fallo real: una alerta amarilla por lluvia/tormenta activa no se mencionó en el boletín porque el texto solo vivía en atributos title=/aria-label= de iconos en la página de AEMET, y porque el modelo generalizó mal la regla "la amarilla se omite" que solo vale para calor). Si hay una alerta amarilla activa de lluvia, tormenta, viento u otro fenómeno (no de calor) y NO implica suspensión, "decision" sigue siendo AGUA/DARSENA/TIERRA (no "PARCIAL", aquí no se cancela nada) pero el boletín TIENE que mencionar la alerta igualmente, justo después del saludo y antes del viento, con su hora de fin — usa la plantilla "Día con alerta AMARILLA activa que NO suspende nada" del modelo (sección 7). Busca especialmente en el texto de AEMET fragmentos entre corchetes como "[Low - Rainfalls]" o "[moderate thunderstorm]" — son avisos reales rescatados de iconos de la página.
 
 Redacta el boletín exactamente en el formato del modelo. Usa siempre los nombres locales de viento del club (Tramuntana, Gregal, Llevant, Garbí, Migjorn, Llebeig, Ponent, Mistral), nunca grados.
 
