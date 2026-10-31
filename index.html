@@ -237,21 +237,23 @@
     <div class="status-flag" style="background:var(--green)"></div>
     <div>
       <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Gregal suave a primera hora → Llevant moderado desde mitad mañana</div>
+      <div class="status-sub">Gregal moderado a fuerte (rachas más fuertes a mediodía) + alerta amarilla lluvia/tormenta hasta 17:59h, sin suspensión</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL sábado 31 de octubre de 2026
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL sábado 31 de octubre
 
-Buenas días!
+Buenos días!
 
-Gregal suave a primera hora; Llevant moderado a partir de mitad mañana, manteniéndose hasta el final de la jornada.
+⚠️ La AEMET mantiene activa la ALERTA AMARILLA por LLUVIAS y por TORMENTAS hasta las 17:59 horas del día de hoy ⚠️
+
+Gregal moderado a fuerte con rachas de mayor intensidad a mediodía. Posibilidad de chubascos irregulares y tormenta eléctrica. Atención a notificaciones puntuales!
 
 Entrenamiento en el agua.
 
-No os olvideis traer algún tipo de protección solar y agua a los entrenamientos.
+No olvidéis traer ropa adecuada, algún tipo de protección solar y agua a los entrenamientos.
 
 Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodbuster)</p>
     <button class="copy-btn" onclick="copyBulletin(this)">Copiar texto</button>
@@ -260,13 +262,13 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM</dt><dd>Gregal (NE/NNE) suave, 4-8 kts entre 00h-10h (Tablademareas)</dd></div>
-      <div><dt>Viento PM</dt><dd>Llevant (ENE) moderado ~9-11 kts entre 11h-15h, rotando de nuevo a Gregal (NE/NNE) ~7-11 kts hasta la noche (Tablademareas)</dd></div>
-      <div><dt>Estado del mar</dt><dd>Hs 0.3-0.5 m durante todo el día (Windfinder) → mar en calma, apto para agua</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>No se detecta aviso amarillo/naranja/rojo activo para litoral norte de Valencia (774602) en el texto disponible; probabilidad de lluvia 100% para hoy pero sin nivel de aviso visible; Windfinder registra lluvia ligera (0.5-0.9 mm/3h), sin indicios de tormenta</dd></div>
-      <div><dt>Temperatura</dt><dd>Máx 22°C / Mín 15°C (AEMET) — sin relevancia de calor en estas fechas</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora), Windfinder Marina Valencia (viento+olas), AEMET municipio Valencia (temperatura y alertas litoral norte)</dd></div>
-      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió contenido específico de la zona (solo menú genérico de la web); Windguru no se intenta (JavaScript)</dd></div>
+      <div><dt>Viento 00-09h</dt><dd>NE/NNE flojo, 4-8 kts aprox (Tablademareas); Windfinder: 3-7 kts NE</dd></div>
+      <div><dt>Viento 11-15h</dt><dd>Gira a ENE, sube a 9-11 kts con rachas (Tablademareas); máx. puntual ~20 km/h (10.8 kts)</dd></div>
+      <div><dt>Viento 16-23h</dt><dd>Vuelve a NE/NNE, 8-11 kts (Tablademareas); Windfinder hasta 10 kts con rachas 10-12 kts</dd></div>
+      <div><dt>Estado del mar (Hs)</dt><dd>0.3-0.5 m durante el día según Windfinder → criterio agua</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>Amarilla por LLUVIAS y amarilla por TORMENTAS, litoral norte de Valencia (774602), activa hasta las 17:59h; tabla AEMET muestra riesgo bajo ('Low - Rainfalls') para hoy y mañana. No implica suspensión (nivel amarillo).</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora), Windfinder Marina Valencia (viento+Hs), AEMET municipio Valencia (alertas litoral norte)</dd></div>
+      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió predicción específica para hoy, solo la estructura genérica de la página (sin texto de avisos extraíble)</dd></div>
     </dl>
   </div>
 
