@@ -230,24 +230,24 @@
   <h1>PARTE DE<br>LA DÁRSENA</h1>
   <div class="fecha-wrap">
     <span class="fecha-label">Datos de</span>
-    <p class="fecha">Domingo, 1 de noviembre de 2026</p>
+    <p class="fecha">Lunes, 2 de noviembre de 2026</p>
   </div>
 
   <div class="status-card">
     <div class="status-flag" style="background:var(--green)"></div>
     <div>
       <div class="status-word" style="color:var(--green)">AGUA</div>
-      <div class="status-sub">Ponent flojo a primera hora → Garbí moderado a fuerte desde la tarde, bajando al anochecer</div>
+      <div class="status-sub">Tramuntana moderado a primera hora → Migjorn flojo a partir de la tarde</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEREOLÓGICA DEL domingo 1 de noviembre
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL lunes 2 de noviembre
 
 Buenas días!
 
-Ponent flojo a primera hora; Garbí moderado a fuerte a partir de la tarde, y que bajará de intensidad a última hora de la tarde.
+Tramuntana moderado a primera hora; Migjorn flojo a partir de la tarde.
 
 Entrenamiento en el agua.
 
@@ -260,13 +260,12 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM (0-9h)</dt><dd>Rotando N (15 km/h, ~0h) → NNW/NW (8-9 km/h) → WNW/W (9-14 km/h, ~7-9h). Ponent flojo-suave en horas de entrenamiento.</dd></div>
-      <div><dt>Viento mediodía-tarde (10-19h)</dt><dd>WSW/SW/SSW 10-14 km/h (10-13h) girando a S/SE: 15h SE 15 km/h, 16h SSE 17 km/h, 17h SE 26 km/h (pico, ~14 kts), 18h SE 23 km/h, 19h SE 10 km/h (caída ~57% respecto al pico de 17h). Garbí moderado a fuerte que baja claramente al final de la tarde.</dd></div>
-      <div><dt>Viento noche (20-23h)</dt><dd>Gira a ENE/NNE/NE, 10-24 km/h (Gregal entrando de madrugada, fuera de horario de entrenamiento).</dd></div>
-      <div><dt>Estado del mar (Hs, Windfinder Marina Valencia)</dt><dd>0.4-0.5 m durante toda la jornada → criterio agua (Hs <0.5m, algún valor puntual exacto en 0.5m).</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>Litoral norte de Valencia (774602): 'No hazard' para el domingo 1 de noviembre. Sin alertas de calor, lluvia, tormenta, viento ni costeras activas hoy.</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, OK), Windfinder Marina Valencia (viento+olas, OK), AEMET municipio Valencia (avisos litoral norte, OK).</dd></div>
-      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió predicción textual específica para el área (solo menú de navegación); se usó Tablademareas y Windfinder como sustitutos, según protocolo del modelo.</dd></div>
+      <div><dt>Viento AM</dt><dd>Tablademareas: mezcla N/NNE/NE (predominio NNE-N, Tramuntana) entre 0h-9h, 8-17 kts, bajando a casi calma hacia las 11-12h. Windfinder confirma 9 kts Nordeste a las 06:05.</dd></div>
+      <div><dt>Viento PM</dt><dd>Tablademareas: gira a S/SSE (Migjorn) a partir de las 14h, flojo, 2-8 kts hasta el final de la jornada (máx 8 kts a las 18h).</dd></div>
+      <div><dt>Estado del mar</dt><dd>Windfinder Marina Valencia: Hs 0.6-0.9 m durante todo el día, oleaje corto (4-7 s). Sin indicios de mar de fondo relevante para la dársena interior.</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>Sin avisos activos en litoral norte de Valencia (código 774602): 'No hazard' para todos los días de la tabla (lun-sáb). Probabilidad de lluvia hoy muy baja (10% mañana / 0% tarde / 20% noche). Sin alertas de calor, lluvia, tormenta ni viento.</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora, principal), Windfinder Marina Valencia (viento+olas), AEMET municipio Valencia (alertas+temperatura). Windguru no consultado (requiere JavaScript).</dd></div>
+      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió predicción textual específica para la zona (solo la página genérica de navegación, sin datos de val1 extraídos).</dd></div>
     </dl>
   </div>
 
