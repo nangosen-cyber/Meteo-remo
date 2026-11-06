@@ -237,17 +237,17 @@
     <div class="status-flag" style="background:var(--amber)"></div>
     <div>
       <div class="status-word" style="color:var(--amber)">DARSENA</div>
-      <div class="status-sub">Ponent suave a primera hora → Llevant moderado desde la tarde (baja al final); oleaje obliga a dársena</div>
+      <div class="status-sub">Poniente flojo a primera hora → Levante moderado desde la tarde; dársena por oleaje de 0.7-0.9m</div>
     </div>
   </div>
 
   <div class="card">
     <h2>Boletín (formato WhatsApp)</h2>
-    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL viernes 6 de noviembre de 2026
+    <p class="bulletin" id="bulletinText">PREVISIÓN METEOROLÓGICA DEL viernes 6 de noviembre
 
-Buenas días!
+Buenos días!
 
-Ponent suave a primera hora; Llevant moderado a partir de la tarde, y que bajará de intensidad a última hora de la tarde.
+Poniente flojo a primera hora; Levante moderado a partir de la tarde, y que bajará de intensidad a última hora de la tarde.
 
 Entrenamiento en la dársena.
 
@@ -260,12 +260,12 @@ Cualquier actualización se realizará por los medios habituales (WhatsApp, Wodb
   <div class="card">
     <h2>Datos usados (para comparar)</h2>
     <dl class="datos">
-      <div><dt>Viento AM</dt><dd>Tablademareas: N/NNW/NW de madrugada (0-3h), pasa a W 8-13 km/h (≈4-7 kts) de 4h a 13h → Ponent suave. Windfinder: 2-6 kts, dirección WSW variable, coincide con observación actual 3 kts WSW</dd></div>
-      <div><dt>Viento PM</dt><dd>Tablademareas: vira a SE/E sobre las 14-15h, E 13-14 km/h (≈7 kts) a las 15-16h, pico ENE 20 km/h (≈11 kts) a las 17h, cayendo a ENE 7 km/h (≈4 kts) a las 19h → Llevant moderado con caída >40% entre 17h-20h, baja de intensidad a última hora</dd></div>
-      <div><dt>Estado del mar</dt><dd>Windfinder Hs 0.7-0.9 m durante toda la jornada (rango 0.5-1.25 m) → criterio fino indica dársena, no mar abierto</dd></div>
-      <div><dt>Alerta AEMET</dt><dd>Sin avisos activos para litoral norte de Valencia (todas las jornadas próximas marcadas 'No hazard'). Sin alertas de calor, lluvia, tormenta ni viento detectadas en el texto de AEMET municipio</dd></div>
-      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora) ✅, Windfinder Marina Valencia (viento+olas) ✅, AEMET municipio Valencia (alertas+temperatura) ✅</dd></div>
-      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió predicción textual específica (requiere selección interactiva de zona en el navegador); Windguru no se intenta por ser JavaScript</dd></div>
+      <div><dt>Viento AM</dt><dd>00-03h N/NNW/NW muy flojo (4-5 kts); 04-12h Poniente (W) dominante, flojo-suave (4-7 kts, máx 13 km/h≈7kt a las 11h). Fuente: tablademareas</dd></div>
+      <div><dt>Viento PM</dt><dd>13-14h calma/variable (WSW/SE, 2-3kt); 15-18h Levante (E/ENE) moderado creciendo hasta ~11kt (20 km/h) a las 17h; cae a NE/NNE ~4kt hacia las 20h (caída >50%). Fuente: tablademareas</dd></div>
+      <div><dt>Estado del mar</dt><dd>Hs Marina Valencia estable en 0.7-0.9 m durante todo el día (criterio club: 0.5-1.25m → dársena). Fuente: Windfinder</dd></div>
+      <div><dt>Alerta AEMET</dt><dd>Sin avisos activos. Litoral norte de Valencia: 'No hazard' para todos los días consultados (viernes a jueves). No se detectan avisos de calor, lluvia, tormenta, viento ni costeros en el texto extraído de AEMET municipio.</dd></div>
+      <div><dt>Fuentes</dt><dd>Tablademareas (viento hora a hora) ✅, Windfinder Marina Valencia (viento+olas) ✅, AEMET municipio Valencia (alertas litoral norte) ✅. Windguru no se consulta (JavaScript, no carga con web_fetch).</dd></div>
+      <div><dt>Sin acceso</dt><dd>AEMET marítima val1 no devolvió texto de predicción específica para la zona Valencia-Murcia, solo la página de selección de áreas; no se detectaron avisos adicionales ahí.</dd></div>
     </dl>
   </div>
 
